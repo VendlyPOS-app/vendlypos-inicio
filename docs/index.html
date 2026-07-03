@@ -370,7 +370,7 @@
         <div class="policy-card" id="privacidad">
             <span class="badge">Documento Oficial — Google Play</span>
             <h1>Política de Privacidad</h1>
-            <div class="date">Última actualización: 26 de junio de 2026</div>
+            <div class="date">Última actualización: 3 de julio de 2026</div>
 
             <p>Esta Política de Privacidad describe de forma transparente y completa cómo la aplicación móvil
                 <strong>AuraPOS</strong> (en adelante, «la Aplicación»), desarrollada por <strong>NexoBits</strong>,
@@ -383,7 +383,9 @@
             <div class="highlight-box success">
                 <p><strong>Resumen rápido:</strong> AuraPOS no vende, comparte ni monetiza datos personales o comerciales.
                     Toda la información de ventas, productos y clientes permanece en el dispositivo del usuario.
-                    Solo se contacta con Firebase para validar la licencia de uso.</p>
+                    Se contacta con Firebase para validar la licencia de uso, y opcionalmente con el Ministerio de Hacienda
+                    de El Salvador para la emisión de Documentos Tributarios Electrónicos (DTE), únicamente cuando
+                    el usuario activa y configura dicha funcionalidad.</p>
             </div>
 
             <!-- 1. Información que recopilamos -->
@@ -397,7 +399,9 @@
                 <li>Historial de transacciones de venta: marcas de tiempo, totales y método de pago.</li>
                 <li>Datos de clientes del negocio gestionados por el propio comercio: nombre, teléfono, correo
                     electrónico y puntos de fidelidad. Estos datos son ingresados manualmente por el operador
-                    y nunca se transmiten a servidores externos.</li>
+                    y se almacenan localmente. <em>En caso de emitir un DTE (Factura o CCF), los datos del
+                    receptor se transmiten al Ministerio de Hacienda de El Salvador como parte del comprobante
+                    fiscal; véase la sección E.</em></li>
                 <li>Configuración del sistema: nombre del negocio, parámetros de impresora y ajustes de
                     la aplicación.</li>
             </ul>
@@ -434,7 +438,45 @@
                     códigos de barras o capturar imágenes de productos del catálogo.</li>
             </ul>
 
-            <h3>E. Notificaciones Locales</h3>
+            <h3>E. Credenciales y Datos para Documentos Tributarios Electrónicos (DTE)</h3>
+            <p>La Aplicación incluye una funcionalidad opcional para la emisión de Documentos Tributarios Electrónicos
+                (DTE) conforme a la normativa del <strong>Ministerio de Hacienda de El Salvador</strong>. Esta
+                funcionalidad es de configuración voluntaria por parte del operador del negocio y únicamente se activa
+                cuando el usuario ingresa sus credenciales.</p>
+            <p>Cuando se habilita el módulo DTE, la Aplicación gestiona los siguientes datos:</p>
+            <ul>
+                <li><strong>Credenciales del API del Ministerio de Hacienda</strong> (usuario y contraseña API
+                    proporcionados por el propio usuario): Se almacenan de forma cifrada en el
+                    <code>Android Keystore</code> del dispositivo mediante <code>FlutterSecureStorage</code>.
+                    Se usan exclusivamente para obtener un token JWT de autenticación ante el servidor del MH.
+                    <strong>No se comparten con terceros distintos al MH.</strong></li>
+                <li><strong>Clave Privada RSA (formato PEM)</strong>: Generada por el operador con herramientas
+                    externas (ej. OpenSSL) e ingresada por el usuario. Se almacena cifrada en el Keystore de Android
+                    y se utiliza únicamente de forma local, dentro del dispositivo, para firmar digitalmente los DTE
+                    (firma JWS RS256). <strong>Esta clave nunca abandona el dispositivo.</strong></li>
+                <li><strong>Datos del receptor del DTE</strong> (nombre, NIT/DUI, NRC, dirección, correo del cliente
+                    del negocio): Se envían al servidor oficial del Ministerio de Hacienda
+                    (<code>api.dtes.mh.gob.sv</code>) únicamente como parte del documento fiscal, mediante
+                    conexión cifrada HTTPS/TLS. La Aplicación <strong>no retiene estos datos en servidores
+                    propios</strong>.</li>
+                <li><strong>Token JWT del MH</strong>: Se almacena temporalmente en memoria RAM durante
+                    aproximadamente 7.5 horas para evitar autenticaciones repetidas. No se persiste en disco.</li>
+            </ul>
+
+            <h3>F. Monitor de Rendimiento Interno (Easter Egg para Desarrolladores)</h3>
+            <p>La Aplicación incluye un módulo de diagnóstico técnico accesible únicamente mediante una secuencia
+                especial de interacción en la pantalla de Ajustes (toque consecutivo 7 veces sobre el título del
+                encabezado). Este módulo está diseñado para uso exclusivo del desarrollador.</p>
+            <ul>
+                <li>Lee métricas del sistema operativo Android: FPS (cuadros por segundo renderizados por la App)
+                    y porcentaje de uso de memoria RAM de la Aplicación.</li>
+                <li>Estas métricas se muestran en pantalla en tiempo real y son <strong>exclusivamente locales</strong>.
+                    No se almacenan en base de datos ni se transmiten a ningún servidor.</li>
+                <li>El módulo también puede liberar el caché de imágenes de la App desde el propio dispositivo,
+                    sin ninguna comunicación externa.</li>
+            </ul>
+
+            <h3>G. Notificaciones Locales</h3>
             <p>La Aplicación puede mostrar notificaciones locales en el dispositivo (sin pasar por servidores externos) para alertar sobre: nuevos encargos o pedidos recibidos desde el catálogo web, vencimiento próximo de la licencia de uso, productos con stock bajo, deudas/créditos vencidos y metas diarias de venta cumplidas. Estas notificaciones son generadas y mostradas completamente en el dispositivo por el sistema operativo Android, sin involucrar servidores de notificaciones push externos.</p>
 
             <!-- 2. Permisos -->
@@ -477,7 +519,10 @@
                 </li>
                 <li>
                     <strong>Internet</strong> (<code>android.permission.INTERNET</code>)<br>
-                    <em>Propósito:</em> Verificar el estado de la licencia de uso, sincronizar datos del catálogo y escuchar pedidos en tiempo real en la nube.
+                    <em>Propósito:</em> Verificar el estado de la licencia de uso, sincronizar datos del catálogo,
+                    escuchar pedidos en tiempo real en la nube, y —cuando el usuario activa el módulo DTE—
+                    comunicarse con el API del Ministerio de Hacienda de El Salvador para la emisión de
+                    Documentos Tributarios Electrónicos.
                 </li>
                 <li>
                     <strong>Notificaciones</strong> (<code>android.permission.POST_NOTIFICATIONS</code>)<br>
@@ -495,6 +540,8 @@
                 <li>Sincronizar datos operacionales con el servidor local del negocio cuando el usuario lo configure.</li>
                 <li>Enviar notificaciones administrativas del sistema (alertas de vencimiento de licencia,
                     actualizaciones).</li>
+                <li>Emitir Documentos Tributarios Electrónicos (DTE) ante el Ministerio de Hacienda de El Salvador,
+                    cuando el operador activa y configura voluntariamente dicha funcionalidad.</li>
             </ul>
             <p><strong>No utilizamos la información para:</strong> publicidad, perfilado de usuarios, análisis de
                 comportamiento, venta a terceros ni ningún fin distinto a los listados anteriormente.</p>
@@ -513,6 +560,12 @@
                             Firebase aplica su propia
                             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
                                 política de privacidad</a>.</li>
+                        <li><strong>Ministerio de Hacienda de El Salvador (<code>api.dtes.mh.gob.sv</code>):</strong>
+                            Solo cuando el usuario activa y configura el módulo DTE. Se transmiten los datos del
+                            documento tributario (emisor, receptor, detalle de venta) mediante HTTPS/TLS para
+                            cumplir con la obligación legal de emisión electrónica de comprobantes fiscales.
+                            El MH aplica su propia
+                            <a href="https://www.mh.gob.sv/" target="_blank" rel="noopener">política institucional</a>.</li>
                         <li><strong>Servidor local del negocio (LAN/mDNS):</strong> Sincronización de datos
                             entre dispositivos del mismo establecimiento. El flujo de datos cifrado nunca abandona
                             la red interna del local comercial. Su configuración es responsabilidad del usuario.</li>
@@ -527,7 +580,8 @@
                 <li>Todos los datos operacionales se almacenan en la base de datos SQLite cifrada dentro del
                     almacenamiento aislado de la aplicación (<em>app-specific storage</em>), inaccesible para
                     otras aplicaciones.</li>
-                <li>Las credenciales de licencia, PIN de administrador e identificadores sensibles se protegen
+                <li>Las credenciales de licencia, PIN de administrador, credenciales del API del Ministerio de
+                    Hacienda (usuario, contraseña y clave privada RSA) e identificadores sensibles se protegen
                     mediante <code>FlutterSecureStorage</code>, que utiliza el <strong>Android Keystore System</strong>
                     (cifrado AES respaldado por hardware cuando está disponible).</li>
                 <li>La opción <code>android:allowBackup="false"</code> está habilitada en el manifiesto, lo que
@@ -683,6 +737,27 @@
                         <td><span class="tag tag-yes">Google LLC</span></td>
                         <td>Servidores de Google</td>
                         <td>Diagnóstico técnico / Firebase SDK</td>
+                    </tr>
+                    <tr>
+                        <td>Datos del receptor de DTE (nombre, NIT/DUI, dirección) — <em>Solo si DTE está activo</em></td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-yes">Ministerio de Hacienda ES</span></td>
+                        <td>Servidores del MH El Salvador (HTTPS)</td>
+                        <td>Cumplimiento tributario legal / emisión de facturas y CCF</td>
+                    </tr>
+                    <tr>
+                        <td>Credenciales API del MH (usuario/contraseña) — <em>Solo si DTE está activo</em></td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>Android Keystore (cifrado por el SO)</td>
+                        <td>Autenticación ante el API del MH para emitir DTE</td>
+                    </tr>
+                    <tr>
+                        <td>Métricas de rendimiento (FPS, RAM de la App)</td>
+                        <td><span class="tag tag-no">No (solo en pantalla)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>Solo en memoria RAM, nunca persiste</td>
+                        <td>Diagnóstico técnico del desarrollador (Easter egg)</td>
                     </tr>
                 </tbody>
             </table>
