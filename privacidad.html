@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad y Términos | VendlyPOS (Desktop & Android)</title>
+    <meta name="description" content="Política de Privacidad, Uso de Datos de Google y Términos y Condiciones de Uso de VendlyPOS para Windows Desktop y Android.">
+    <style>
+        :root {
+            --bg-main: #05070c;
+            --bg-card: #0b111e;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --border: #1e293b;
+            --code-bg: #1e1b4b;
+            --code-text: #818cf8;
+            --green: #22c55e;
+            --amber: #f59e0b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .top-glow {
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #06b6d4);
+            width: 100%;
+        }
+
+        header {
+            background-color: rgba(11, 17, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-title);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 40px auto 60px auto;
+            padding: 0 24px;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 9px 22px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover,
+        .nav-pill:focus {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .policy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--green);
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-top: 44px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        ul ul {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        ul ul li::before {
+            content: "•";
+            color: var(--text-muted);
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #a5b4fc;
+            border-bottom-style: solid;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(30, 41, 59, 0.4);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--amber);
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* Tabla de seguridad de datos */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .data-table th {
+            background: rgba(99, 102, 241, 0.12);
+            color: #a5b4fc;
+            font-weight: 700;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text-body);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:nth-child(even) td {
+            background: rgba(30, 41, 59, 0.2);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag-no { background: rgba(34, 197, 94, 0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+        .tag-yes { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245,158,11,0.2); }
+        .tag-local { background: rgba(99, 102, 241, 0.12); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.2); }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px 60px 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            background-color: #030508;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            border-bottom-color: transparent;
+        }
+
+        @media (max-width: 640px) {
+            .container { margin: 20px auto; }
+            .policy-card { padding: 30px 20px; border-radius: 12px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .nav-pills { gap: 10px; }
+            .nav-pill { padding: 8px 16px; font-size: 13px; width: 100%; text-align: center; }
+            .data-table { font-size: 12px; }
+            .data-table th, .data-table td { padding: 10px 10px; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-glow"></div>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🐰</span> VendlyPOS
+        </a>
+    </header>
+
+    <div class="container">
+
+        <div class="nav-pills">
+            <a href="index.html" class="nav-pill">← Volver al Inicio</a>
+            <a href="#privacidad" class="nav-pill">Política de Privacidad</a>
+            <a href="#seguridad-datos" class="nav-pill">Seguridad de Datos</a>
+            <a href="condiciones.html" class="nav-pill">Condiciones del Servicio</a>
+        </div>
+
+        <!-- ============================================================
+             POLÍTICA DE PRIVACIDAD
+        ============================================================ -->
+        <div class="policy-card" id="privacidad">
+            <span class="badge">Documento Oficial — Google Cloud & Google Play</span>
+            <h1>Política de Privacidad</h1>
+            <div class="date">Última actualización: 23 de septiembre de 2026</div>
+
+            <p>Esta Política de Privacidad describe de forma transparente y completa cómo la plataforma y suite de software
+                <strong>VendlyPOS</strong> en sus ediciones para <strong>Windows Desktop</strong> y <strong>Android Mobile</strong>
+                (en adelante, «la Aplicación» o «el Sistema»), desarrollada por <strong>NexoBits</strong>,
+                recopila, usa, almacena y protege la información de sus usuarios. VendlyPOS es una solución de
+                punto de venta (POS) empresarial (B2B) orientada a la gestión comercial local de tiendas y comercios.</p>
+
+            <p>Al instalar o usar la Aplicación en cualquiera de sus plataformas, el operador del negocio (en adelante, «usuario») declara haber leído
+                y aceptado íntegramente esta Política. Si no está de acuerdo, debe abstenerse de usar y desinstalar la Aplicación.</p>
+
+            <div class="highlight-box success">
+                <p><strong>Resumen rápido:</strong> VendlyPOS no vende, comparte ni monetiza datos personales o comerciales.
+                    Toda la información operativa de ventas, inventario, productos y clientes permanece en el dispositivo del usuario (SQLite).
+                    Se contacta con Firebase para validar la licencia de uso, opcionalmente con el Ministerio de Hacienda
+                    de El Salvador para la emisión de Documentos Tributarios Electrónicos (DTE), y opcionalmente con los servicios
+                    de Google (Google Drive y Google Identity) únicamente bajo autorización explícita para copias de seguridad en la nube
+                    y validación administrativa de catálogo web.</p>
+            </div>
+
+            <!-- 1. Información que recopilamos -->
+            <h2>1. Información que Recopilamos</h2>
+
+            <h3>A. Datos operacionales del negocio (almacenados únicamente en el dispositivo)</h3>
+            <p>La Aplicación opera de forma descentralizada y local mediante motores SQLite optimizados: <code>Drift</code>
+                en la edición móvil para Android y <code>SQLAlchemy</code> con base de datos local (<code>store.db</code>) en la edición para Windows Desktop.
+                Se almacenan exclusivamente en el dispositivo o equipo del usuario:</p>
+            <ul>
+                <li>Catálogo de productos: nombres, precios, códigos de barras, categorías e inventario físico.</li>
+                <li>Historial de transacciones de venta: marcas de tiempo, totales, desglose de artículos y métodos de pago.</li>
+                <li>Datos de clientes del negocio gestionados por el propio comercio: nombre, teléfono, correo
+                    electrónico y puntos de fidelidad. Estos datos son ingresados manualmente por el operador
+                    y se almacenan localmente. <em>En caso de emitir un DTE (Factura o CCF), los datos del
+                    receptor se transmiten al Ministerio de Hacienda de El Salvador como parte del comprobante
+                    fiscal; véase la sección D.</em></li>
+                <li>Configuración del sistema: nombre del negocio, parámetros de impresoras de tickets y ajustes generales.</li>
+            </ul>
+
+            <h3>B. Identificador de dispositivo para licencias (<code>device_uuid</code>)</h3>
+            <p>Para gestionar y validar la licencia de uso, la Aplicación genera un identificador único de dispositivo
+                (<code>device_uuid</code>). Este identificador:</p>
+            <ul>
+                <li>Se genera mediante un hash <strong>SHA-256 con sal</strong> aplicado sobre información del
+                    dispositivo, con el fin de <strong>proteger la identidad física real del hardware</strong>.</li>
+                <li>Se almacena de forma cifrada en el almacenamiento seguro del sistema operativo
+                    (<code>FlutterSecureStorage</code>).</li>
+                <li>Se comparte con el servidor de licencias de Firebase <strong>exclusivamente</strong> para verificar
+                    que la licencia adquirida sea válida y no esté siendo utilizada en más dispositivos de los
+                    permitidos.</li>
+                <li><strong>No se utiliza para rastrear al usuario, mostrar publicidad ni con ningún otro fin.</strong></li>
+            </ul>
+
+            <h3>C. Datos de diagnóstico (Firebase)</h3>
+            <p>La Aplicación usa Firebase (Google LLC) como infraestructura de gestión de licencias. Firebase puede
+                recopilar automáticamente métricas de diagnóstico técnico del dispositivo (modelo, versión de Android,
+                idioma) según la
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.
+                Estos datos son procesados por Google y no son accesibles para NexoBits más allá de lo que expone la
+                consola de Firebase.</p>
+
+            <h3>D. Credenciales y Datos para Documentos Tributarios Electrónicos (DTE)</h3>
+            <p>La Aplicación incluye una funcionalidad opcional para la emisión de Documentos Tributarios Electrónicos
+                (DTE) conforme a la normativa del <strong>Ministerio de Hacienda de El Salvador</strong>. Esta
+                funcionalidad es de configuración voluntaria por parte del operador del negocio y únicamente se activa
+                cuando el usuario ingresa sus credenciales.</p>
+            <p>Cuando se habilita el módulo DTE, la Aplicación gestiona los siguientes datos:</p>
+            <ul>
+                <li><strong>Credenciales del API del Ministerio de Hacienda</strong> (usuario y contraseña API
+                    proporcionados por el propio usuario): Se almacenan de forma cifrada en el
+                    <code>Android Keystore</code> del dispositivo mediante <code>FlutterSecureStorage</code>.
+                    Se usan exclusivamente para obtener un token JWT de autenticación ante el servidor del MH.
+                    <strong>No se comparten con terceros distintos al MH.</strong></li>
+                <li><strong>Clave Privada RSA (formato PEM)</strong>: Generada por el operador con herramientas
+                    externas (ej. OpenSSL) e ingresada por el usuario. Se almacena cifrada en el Keystore de Android
+                    y se utiliza únicamente de forma local, dentro del dispositivo, para firmar digitalmente los DTE
+                    (firma JWS RS256). <strong>Esta clave nunca abandona el dispositivo.</strong></li>
+                <li><strong>Datos del receptor del DTE</strong> (nombre, NIT/DUI, NRC, dirección, correo del cliente
+                    del negocio): Se envían al servidor oficial del Ministerio de Hacienda
+                    (<code>api.dtes.mh.gob.sv</code>) únicamente como parte del documento fiscal, mediante
+                    conexión cifrada HTTPS/TLS. La Aplicación <strong>no retiene estos datos en servidores
+                    propios</strong>.</li>
+                <li><strong>Token JWT del MH</strong>: Se almacena temporalmente en memoria RAM durante
+                    aproximadamente 7.5 horas para evitar autenticaciones repetidas. No se persiste en disco.</li>
+            </ul>
+
+            <h3>E. Libro de Créditos (Fiar)</h3>
+            <p>Los datos relativos a los créditos otorgados a clientes (saldos deudas, montos prestados, abonos parciales y fechas de vencimiento) se guardan de forma estrictamente local en la base de datos SQLite del dispositivo. Esta información no se comparte con terceros ni se sincroniza con servidores externos del desarrollador.</p>
+
+            <h3>F. Procesamiento de Imágenes con Inteligencia Artificial (ML Kit)</h3>
+            <p>Cuando el usuario toma una fotografía de un producto con la cámara de la Aplicación, se ofrece
+                opcionalmente la función de <strong>eliminación automática de fondo</strong>. Esta función
+                usa <strong>Google ML Kit Subject Segmentation</strong>, una API de inteligencia artificial local:</p>
+            <ul>
+                <li>El procesamiento ocurre <strong>completamente en el dispositivo</strong> (on-device),
+                    de forma local y sin conexión a servidores externos.</li>
+                <li>Las imágenes de productos <strong>no se transmiten</strong> a Google ni a ningún servidor
+                    durante este proceso.</li>
+                <li>Las imágenes resultantes se almacenan exclusivamente en la base de datos local del dispositivo.</li>
+                <li>El uso de esta función es <strong>totalmente opcional</strong>. El usuario puede usar fotos
+                    de productos sin activar la eliminación de fondo.</li>
+            </ul>
+
+            <h3>G. Monitor de Rendimiento Interno (Easter Egg para Desarrolladores)</h3>
+            <p>La Aplicación incluye un módulo de diagnóstico técnico local accesible únicamente mediante una secuencia
+                especial de interacción en la pantalla de Ajustes (toque consecutivo 7 veces sobre el título del
+                encabezado). Este módulo está diseñado para uso de diagnóstico técnico.</p>
+            <ul>
+                <li>Lee métricas del sistema operativo Android: FPS (cuadros por segundo renderizados por la App)
+                    y porcentaje de uso de memoria RAM de la Aplicación.</li>
+                <li>Estas métricas se muestran en pantalla en tiempo real y son <strong>exclusivamente locales</strong>.
+                    No se almacenan en base de datos ni se transmiten a ningún servidor.</li>
+                <li>El módulo también puede liberar el caché de imágenes de la App desde el propio dispositivo,
+                    sin ninguna comunicación externa.</li>
+            </ul>
+
+            <h3>H. Notificaciones Locales</h3>
+            <p>La Aplicación puede mostrar notificaciones locales en el dispositivo (sin pasar por servidores externos)
+                para alertar sobre: nuevos encargos o pedidos recibidos desde el catálogo web, vencimiento próximo de la
+                licencia de uso, productos con stock bajo, alertas de deudas/créditos vencidos y metas de ventas cumplidas.
+                Estas notificaciones son generadas y mostradas completamente en el dispositivo por el sistema operativo
+                Android, sin involucrar servidores de notificaciones push externos.</p>
+
+            <h3>I. Datos que NO recopilamos</h3>
+            <ul>
+                <li><strong>Ubicación geográfica (GPS):</strong> La Aplicación no rastrea, solicita ni almacena
+                    coordenadas de ubicación del usuario bajo ninguna circunstancia.</li>
+                <li><strong>Contactos del teléfono o sistema:</strong> No se accede a la agenda de contactos del dispositivo ni del equipo.</li>
+                <li><strong>Micrófono ni audio:</strong> No se graban ni procesan conversaciones ni sonidos.</li>
+                <li><strong>Fotos, videos o archivos personales:</strong> La cámara se usa exclusivamente para escanear
+                    códigos de barras o capturar imágenes de productos del catálogo comercial. En ningún momento se accede a galerías privadas ni archivos personales.</li>
+            </ul>
+
+            <h3>J. Integración con Google Drive (Copias de Seguridad en la Nube)</h3>
+            <p>VendlyPOS (en sus ediciones Desktop y Mobile) ofrece una función opcional de <strong>copias de seguridad automáticas y manuales en Google Drive</strong>,
+                permitiendo al comerciante resguardar la base de datos de su negocio frente a incidentes de hardware.</p>
+            <ul>
+                <li><strong>Alcance solicitado:</strong> <code>https://www.googleapis.com/auth/drive.file</code>.</li>
+                <li><strong>Propósito estricto y delimitado:</strong> Este permiso se utiliza <strong>exclusivamente</strong> para crear una carpeta designada
+                    (denominada <code>VendlyPOS_Backups</code>) en la unidad del usuario y subir/descargar copias de seguridad de la base de datos del sistema
+                    (archivos comprimidos y protegidos con cifrado).</li>
+                <li><strong>Aislamiento total de archivos personales:</strong> Conforme a las directivas de Google para el alcance <code>drive.file</code>,
+                    VendlyPOS <strong>únicamente puede acceder, ver y modificar los archivos creados directamente por la propia aplicación</strong>.
+                    VendlyPOS <strong>NO</strong> tiene acceso, no puede visualizar, no lee, no altera ni elimina ningún otro archivo, documento, foto
+                    o carpeta preexistente en la cuenta de Google Drive del usuario.</li>
+                <li><strong>Control del usuario y revocación:</strong> La vinculación con Google Drive es 100% voluntaria. El usuario puede desvincular
+                    su cuenta en cualquier momento desde los ajustes del sistema, o revocar el acceso directamente desde el panel de seguridad de su cuenta de Google en
+                    <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+            </ul>
+
+            <h3>K. Autenticación e Identidad con Google (Google Sign-In / OAuth 2.0)</h3>
+            <p>VendlyPOS permite vincular opcionalmente una cuenta de Google para:</p>
+            <ul>
+                <li><strong>Validar la titularidad del catálogo web:</strong> Asociar de forma segura la tienda con el catálogo público en línea, evitando suplantaciones de identidad.</li>
+                <li><strong>Recuperación administrativa de acceso:</strong> Permitir al propietario del negocio restablecer credenciales administrativas maestras en caso de extravío del PIN o contraseña.</li>
+                <li><strong>Alcance solicitado:</strong> <code>openid</code>, <code>email</code> y <code>profile</code>.</li>
+                <li><strong>Tratamiento de datos:</strong> Únicamente se lee la dirección de correo electrónico y el identificador de cuenta de Google para verificar identidad.
+                    No se almacena la contraseña de Google ni se accede a correos de Gmail, contactos ni servicios adicionales.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Declaración de Uso Limitado de las APIs de Google (Google API Services User Data Policy):</strong><br>
+                    El uso y la transferencia que hace VendlyPOS de la información recibida de las APIs de Google a cualquier otra aplicación se apegan estrictamente a la
+                    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de las API de Google</a> (Google API Services User Data Policy),
+                    incluidos los requisitos de <strong>Uso Limitado (Limited Use)</strong>. Los datos obtenidos a través de las APIs de Google nunca se transfieren a terceros (salvo lo estrictamente necesario para brindar la funcionalidad de respaldo solicitada por el usuario), no se utilizan para publicidad ni son procesados por inteligencias artificiales para entrenamiento.</p>
+            </div>
+
+            <!-- 2. Permisos -->
+            <h2>2. Permisos del Dispositivo y su Justificación</h2>
+            <p>La Aplicación solicita únicamente los permisos estrictamente necesarios para su funcionamiento.
+                A continuación se detalla cada uno con su propósito exacto:</p>
+            <ul>
+                <li>
+                    <strong>Cámara</strong> (<code>android.permission.CAMERA</code>)<br>
+                    <em>Propósito:</em> Activar el módulo lector de códigos de barras integrado en el punto de venta
+                    y capturar fotografías de productos para el catálogo. Este permiso es solicitado únicamente cuando
+                    el usuario accede a las funciones de escaneo o carga de imagen.
+                </li>
+                <li>
+                    <strong>Bluetooth clásico</strong> (<code>android.permission.BLUETOOTH</code>,
+                    <code>maxSdkVersion="30"</code>)<br>
+                    <em>Propósito:</em> Conexión con impresoras térmicas de tickets (ESC/POS) en Android 11 e inferior.
+                    Solo aplicable en dispositivos con API ≤ 30.
+                </li>
+                <li>
+                    <strong>Bluetooth Conectar</strong> (<code>android.permission.BLUETOOTH_CONNECT</code>)<br>
+                    <em>Propósito:</em> Establecer comunicación con la impresora Bluetooth previamente emparejada para
+                    emitir comprobantes de pago físicos.
+                </li>
+                <li>
+                    <strong>Bluetooth Escanear</strong> (<code>android.permission.BLUETOOTH_SCAN</code>,
+                    <code>usesPermissionFlags="neverForLocation"</code>)<br>
+                    <em>Propósito:</em> Descubrir impresoras térmicas Bluetooth disponibles en el entorno del negocio.
+                    El flag <code>neverForLocation</code> confirma explícitamente al sistema que este permiso
+                    <strong>no se usa para inferir ubicación</strong>.
+                </li>
+                <li>
+                    <strong>Ubicación aproximada</strong>
+                    (<code>android.permission.ACCESS_FINE_LOCATION</code>, <code>maxSdkVersion="30"</code>)<br>
+                    <em>Propósito:</em> En versiones de Android 11 e inferiores (API ≤ 30), el sistema operativo
+                    Android exige este permiso para habilitar el escaneo de dispositivos Bluetooth. Esto es un
+                    requisito del sistema operativo, <strong>no de VendlyPOS</strong>. La Aplicación
+                    <strong>no recopila, almacena ni transmite coordenadas de ubicación</strong>. Este permiso
+                    solo aplica a dispositivos con Android ≤ 11; en Android 12 o superior no se solicita.
+                </li>
+                <li>
+                    <strong>Internet</strong> (<code>android.permission.INTERNET</code>)<br>
+                    <em>Propósito:</em> Verificar el estado de la licencia de uso, sincronizar datos del catálogo,
+                    escuchar pedidos en tiempo real en la nube, gestionar respaldos en Google Drive bajo demanda, y —cuando el usuario activa el módulo DTE—
+                    comunicarse con el API del Ministerio de Hacienda de El Salvador para la emisión de
+                    Documentos Tributarios Electrónicos.
+                </li>
+                <li>
+                    <strong>Notificaciones</strong> (<code>android.permission.POST_NOTIFICATIONS</code>)<br>
+                    <em>Propósito:</em> Requerido en Android 13+ para permitir el envío de alertas y notificaciones locales inmediatas sobre nuevos pedidos recibidos de la web, productos con stock crítico, alertas de cobranza y cumplimiento de metas comerciales.
+                </li>
+            </ul>
+
+            <h3>Recursos y Permisos en Windows Desktop</h3>
+            <p>La edición de escritorio para Windows opera como una aplicación local independiente y requiere los siguientes accesos en el sistema operativo:</p>
+            <ul>
+                <li><strong>Sistema de archivos local:</strong> Lectura y escritura restringida a la carpeta de instalación y datos del programa (<code>instance/</code>, <code>backups/</code>) para persistir la base de datos SQLite (<code>store.db</code>), archivos de configuración y respaldos locales.</li>
+                <li><strong>Red local y sockets de comunicación:</strong> Apertura de un socket local seguro (<code>localhost:5000</code>) para renderizar la interfaz de usuario y puertos locales para comunicación mDNS/LAN que permite la sincronización bidireccional con terminales Android dentro del mismo establecimiento comercial.</li>
+                <li><strong>Conexión a Internet (HTTPS/TLS):</strong> Comunicación saliente cifrada hacia Firebase (validación de licencia), APIs de Google (Google Drive y Google Identity) y servidores del Ministerio de Hacienda de El Salvador (DTE).</li>
+                <li><strong>Controladores de impresión y Spooler de Windows:</strong> Envío de trabajos de impresión de tickets hacia impresoras térmicas conectadas por USB, red local (TCP/IP) o el subsistema Spooler de Windows.</li>
+            </ul>
+
+            <!-- 3. Uso de la información -->
+            <h2>3. Uso de la Información</h2>
+            <p>La información recopilada se utiliza exclusivamente para:</p>
+            <ul>
+                <li>Operar el sistema de punto de venta: registrar ventas, gestionar inventario y emitir
+                    comprobantes.</li>
+                <li>Validar y mantener activa la licencia de uso mediante el <code>device_uuid</code>.</li>
+                <li>Sincronizar datos operacionales con el servidor local del negocio cuando el usuario lo configure.</li>
+                <li>Enviar notificaciones locales administrativas del sistema (alertas de stock bajo, alertas de deudas,
+                    pedidos recibidos, avisos de licencia).</li>
+                <li>Emitir Documentos Tributarios Electrónicos (DTE) ante el Ministerio de Hacienda de El Salvador,
+                    cuando el operador activa y configura voluntariamente dicha funcionalidad.</li>
+            </ul>
+            <p><strong>No utilizamos la información para:</strong> publicidad, perfilado de usuarios, análisis de
+                comportamiento, venta a terceros ni ningún fin distinto a los listados anteriormente.</p>
+
+            <!-- 4. Compartición de datos -->
+            <h2>4. Intercambio de Datos con Terceros</h2>
+            <p>VendlyPOS aplica una política estricta de mínima exposición de datos:</p>
+            <ul>
+                <li><strong>No vendemos, arrendamos ni transferimos</strong> datos operacionales, inventarios,
+                    registros de ventas ni listas de clientes a ninguna entidad externa.</li>
+                <li>Las únicas conexiones salientes autorizadas son:
+                    <ul>
+                        <li><strong>Firebase (Google LLC):</strong> Infraestructura de validación de licencias y
+                            notificaciones de servicio. Se envía el <code>device_uuid</code> (hash SHA-256,
+                            no el identificador físico real) para verificar la licencia.
+                            Firebase aplica su propia
+                            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+                                política de privacidad</a>.</li>
+                        <li><strong>Google Drive API (Google LLC):</strong> Exclusivamente cuando el usuario activa la sincronización con Google Drive.
+                            Los archivos de respaldo de la base de datos se transfieren directamente a la unidad personal del usuario vía HTTPS utilizando el alcance <code>drive.file</code>.
+                            Google procesa estos archivos conforme a su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a>.</li>
+                        <li><strong>Google Identity Services (Google LLC):</strong> Para autenticación OAuth 2.0 al validar la identidad del administrador o enlazar el catálogo web, sin recopilación de contraseñas.</li>
+                        <li><strong>Ministerio de Hacienda de El Salvador (<code>api.dtes.mh.gob.sv</code>):</strong>
+                            Solo cuando el usuario activa y configura el módulo DTE. Se transmiten los datos del
+                            documento tributario (emisor, receptor, detalle de venta) mediante HTTPS/TLS para
+                            cumplir con la obligación legal de emisión electrónica de comprobantes fiscales.
+                            El MH aplica su propia
+                            <a href="https://www.mh.gob.sv/" target="_blank" rel="noopener">política institucional</a>.</li>
+                        <li><strong>Servidor local del negocio (LAN/mDNS):</strong> Sincronización de datos
+                            entre dispositivos del mismo establecimiento (Desktop y terminales móviles). El flujo de datos cifrado nunca abandona
+                            la red interna del local comercial. Su configuración es responsabilidad del usuario.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- 5. Almacenamiento y seguridad -->
+            <h2>5. Almacenamiento y Seguridad de los Datos</h2>
+            <p>La protección de la información comercial es una prioridad de diseño en VendlyPOS en ambas plataformas:</p>
+            <ul>
+                <li><strong>Almacenamiento local aislado:</strong> En Android, todos los datos operacionales se almacenan en la base de datos SQLite dentro del
+                    almacenamiento aislado de la aplicación (<em>app-specific storage</em>), inaccesible para otras aplicaciones. En Windows Desktop, la base de datos
+                    (<code>store.db</code>) se hospeda localmente en la carpeta del sistema con control de acceso por permisos de usuario del sistema operativo.</li>
+                <li><strong>Cifrado de credenciales y secretos:</strong> En Android, las credenciales sensibles (PIN, claves MH, tokens) se protegen
+                    mediante <code>FlutterSecureStorage</code> con el <strong>Android Keystore System</strong> (cifrado AES respaldado por hardware).
+                    En Windows Desktop, los tokens de sesión de Google Drive y credenciales sensibles se resguardan cifrados mediante criptografía simétrica (Fernet)
+                    vinculada a identificadores criptográficos del hardware o variables de entorno del sistema.</li>
+                <li><strong>Protección contra copias no autorizadas:</strong> En Android, la opción <code>android:allowBackup="false"</code> está habilitada en el manifiesto, lo que
+                    <strong>impide que el sistema realice copias de seguridad automáticas no controladas</strong> en la nube de Google, garantizando que los respaldos en la nube solo ocurran cuando el usuario lo solicite explícitamente a través del módulo de Google Drive.</li>
+                <li><strong>Cifrado en tránsito:</strong> Todas las conexiones de red externas (Firebase, Google APIs, Ministerio de Hacienda) utilizan estrictamente HTTPS/TLS con validación de certificados.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <p><strong>Nota de seguridad:</strong> El operador del negocio es el custodio y responsable
+                    de la seguridad física del dispositivo y del equipo de escritorio. Se recomienda configurar bloqueo de pantalla, contraseñas seguras y
+                    cifrado de unidad (BitLocker en Windows / cifrado de dispositivo en Android).</p>
+            </div>
+
+            <!-- 6. Retención y eliminación -->
+            <h2>6. Retención y Eliminación de Datos</h2>
+            <p>Todos los registros operacionales permanecen almacenados en el dispositivo del usuario hasta que:</p>
+            <ul>
+                <li>El operador los elimine manualmente desde las herramientas internas de la Aplicación.</li>
+                <li>El usuario desinstale completamente la Aplicación, lo que elimina todos los datos locales.</li>
+            </ul>
+            <p><strong>No conservamos copias de seguridad de datos comerciales en servidores en la nube.</strong>
+                El <code>device_uuid</code> (hash SHA-256) asociado a una licencia puede ser solicitado para su
+                eliminación del servidor Firebase contactando al soporte técnico.</p>
+
+            <!-- 7. Menores de edad -->
+            <h2>7. Protección de Menores de Edad</h2>
+            <p>VendlyPOS es una aplicación empresarial (B2B) diseñada exclusivamente para uso por adultos en el
+                contexto de la gestión comercial de un negocio. La Aplicación:</p>
+            <ul>
+                <li><strong>No está dirigida a menores de 13 años</strong> (o la edad mínima digital aplicable
+                    en la jurisdicción del usuario).</li>
+                <li>No recopila intencionalmente información de menores de edad.</li>
+                <li>Si un operador tiene motivos para creer que se han recopilado datos de un menor sin
+                    consentimiento, debe contactar de inmediato con el equipo de soporte para solicitar
+                    la eliminación de dicha información.</li>
+            </ul>
+
+            <!-- 8. Derechos del usuario -->
+            <h2>8. Derechos del Usuario sobre sus Datos</h2>
+            <p>Como usuario de VendlyPOS, tiene derecho a:</p>
+            <ul>
+                <li><strong>Acceder</strong> a sus datos locales directamente desde la Aplicación en cualquier
+                    momento.</li>
+                <li><strong>Corregir o eliminar</strong> datos operacionales (productos, clientes, ventas, créditos)
+                    desde las funciones internas de la Aplicación.</li>
+                <li><strong>Solicitar la eliminación</strong> del <code>device_uuid</code> del servidor de licencias
+                    contactando al equipo de soporte.</li>
+                <li><strong>Exportar</strong> sus datos comerciales mediante las funciones de copia de seguridad
+                    incluidas en la Aplicación.</li>
+                <li><strong>Desinstalar</strong> la Aplicación en cualquier momento, lo que elimina todos los
+                    datos locales del dispositivo de forma permanente.</li>
+            </ul>
+
+            <!-- 9. Modificaciones -->
+            <h2>9. Modificaciones a esta Política</h2>
+            <p>Nos reservamos el derecho de actualizar esta Política de Privacidad para adaptarla a mejoras técnicas,
+                nuevas funcionalidades o cambios normativos del ecosistema Android. La fecha indicada en el encabezado
+                reflejará siempre la última revisión oficial. Se notificará al usuario sobre cambios significativos
+                mediante las notificaciones del sistema de la Aplicación. El uso continuado de la Aplicación tras
+                la publicación de una nueva versión de esta Política implica la aceptación de los cambios.</p>
+
+            <!-- 10. Contacto -->
+            <h2>10. Contacto y Solicitudes de Datos</h2>
+            <p>Para dudas sobre privacidad, solicitudes de eliminación de datos, revocación de consentimientos o soporte técnico:</p>
+            <ul>
+                <li><strong>Desarrollador:</strong> NexoBits — Soluciones de Software Independientes</li>
+                <li><strong>Correo de Soporte y Privacidad:</strong> soporte-vendlypos@googlegroups.com</li>
+                <li><strong>WhatsApp:</strong> +503 7566-6226</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+             SECCIÓN DE SEGURIDAD DE DATOS (Data Safety Summary)
+        ============================================================ -->
+        <div class="policy-card" id="seguridad-datos">
+            <span class="badge">Resumen de Seguridad de Datos</span>
+            <h1>Declaración de Seguridad de Datos</h1>
+            <div class="date">Para referencia en el formulario de Seguridad de Datos de Google Play</div>
+
+            <p>La siguiente tabla resume el comportamiento de VendlyPOS respecto a la recopilación y manejo de datos,
+                en formato compatible con el formulario de <em>Data Safety</em> de Google Play Console:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Categoría de Dato</th>
+                        <th>¿Se recopila?</th>
+                        <th>¿Se comparte?</th>
+                        <th>¿Dónde se almacena?</th>
+                        <th>Propósito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Identificador de dispositivo (<code>device_uuid</code> — hash SHA-256)</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-yes">Solo Firebase</span></td>
+                        <td>Dispositivo (cifrado) + Firebase</td>
+                        <td>Validación de licencia de uso</td>
+                    </tr>
+                    <tr>
+                        <td>Datos de clientes del negocio (nombre, teléfono, correo)</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Gestión de clientes del comercio</td>
+                    </tr>
+                    <tr>
+                        <td>Libro de créditos y fiados (saldos, abonos, vencimientos)</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Gestión interna de créditos comerciales</td>
+                    </tr>
+                    <tr>
+                        <td>Historial de ventas y transacciones</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Operación del POS</td>
+                    </tr>
+                    <tr>
+                        <td>Catálogo de productos e inventario</td>
+                        <td><span class="tag tag-yes">Sí</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Operación del POS</td>
+                    </tr>
+                    <tr>
+                        <td>Imágenes de productos (fotos del catálogo)</td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Visualización en catálogo</td>
+                    </tr>
+                    <tr>
+                        <td>Imágenes procesadas con IA (ML Kit on-device)</td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-local">Solo local</span></td>
+                        <td>Eliminación de fondo de fotos de catálogo (procesamiento 100% en el dispositivo)</td>
+                    </tr>
+                    <tr>
+                        <td>Ubicación GPS / geolocalización</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Contactos del teléfono</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Datos de salud o financieros personales</td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Diagnóstico técnico del dispositivo (Firebase Analytics)</td>
+                        <td><span class="tag tag-yes">Sí (Firebase)</span></td>
+                        <td><span class="tag tag-yes">Google LLC</span></td>
+                        <td>Servidores de Google</td>
+                        <td>Diagnóstico técnico / Firebase SDK</td>
+                    </tr>
+                    <tr>
+                        <td>Datos del receptor de DTE (nombre, NIT/DUI, dirección) — <em>Solo si DTE está activo</em></td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-yes">Ministerio de Hacienda ES</span></td>
+                        <td>Servidores del MH El Salvador (HTTPS)</td>
+                        <td>Cumplimiento tributario legal / emisión de facturas y CCF</td>
+                    </tr>
+                    <tr>
+                        <td>Credenciales API del MH (usuario/contraseña) — <em>Solo si DTE está activo</em></td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>Android Keystore (cifrado por el SO)</td>
+                        <td>Autenticación ante el API del MH para emitir DTE</td>
+                    </tr>
+                    <tr>
+                        <td>Métricas de rendimiento (FPS, RAM de la App)</td>
+                        <td><span class="tag tag-no">No (solo en pantalla)</span></td>
+                        <td><span class="tag tag-no">No</span></td>
+                        <td>Solo en memoria RAM, nunca persiste</td>
+                        <td>Diagnóstico técnico del desarrollador (Easter egg)</td>
+                    </tr>
+                    <tr>
+                        <td>Copias de seguridad en la nube (Google Drive <code>drive.file</code>)</td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-yes">Google Drive del usuario</span></td>
+                        <td>Unidad Google Drive personal del usuario (carpeta <code>VendlyPOS_Backups</code>)</td>
+                        <td>Resguardo y restauración de bases de datos por solicitud del usuario</td>
+                    </tr>
+                    <tr>
+                        <td>Identidad de usuario (Google OAuth: <code>openid</code>, <code>email</code>, <code>profile</code>)</td>
+                        <td><span class="tag tag-yes">Sí (opcional)</span></td>
+                        <td><span class="tag tag-yes">Google LLC</span></td>
+                        <td>Servidores de Google / Memoria local del sistema</td>
+                        <td>Validación de titularidad de catálogo web y recuperación de acceso administrativo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <p><strong>Cifrado en tránsito y en reposo:</strong> Todas las comunicaciones externas (Firebase, Google Drive, Google OAuth, Ministerio de Hacienda)
+                    se realizan estrictamente sobre conexiones cifradas <strong>HTTPS/TLS</strong>. Los datos locales se
+                    almacenan en bases de datos SQLite locales (Android Keystore en móvil / Cifrado simétrico de credenciales en Desktop).</p>
+            </div>
+
+            <h3>Opciones de eliminación de datos</h3>
+            <ul>
+                <li><strong>Datos locales:</strong> El usuario puede eliminar sus datos operacionales desde la configuración de la aplicación, o desinstalando la aplicación de su dispositivo o equipo.</li>
+                <li><strong>Identificador de licencia (device_uuid):</strong> Puede solicitar su eliminación del servidor Firebase contactando al soporte técnico mediante el correo: <code>soporte-vendlypos@googlegroups.com</code> o WhatsApp: +503 7566-6226.</li>
+                <li><strong>Respaldos en Google Drive:</strong> El usuario puede eliminar sus copias de seguridad directamente desde su cuenta de Google Drive en la carpeta <code>VendlyPOS_Backups</code>, o revocar el acceso en cualquier momento en <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================================
+             TÉRMINOS Y CONDICIONES
+        ============================================================ -->
+        <div class="policy-card" id="terminos">
+            <span class="badge">Legal</span>
+            <h1>Términos y Condiciones de Uso</h1>
+            <div class="date">Vigente desde: Junio 2026 — Última revisión: 26 de junio de 2026</div>
+
+            <p>Al descargar, instalar o utilizar la plataforma de software <strong>VendlyPOS</strong> en cualquiera de sus ediciones
+                (<strong>Windows Desktop</strong> y <strong>Android Mobile</strong>, en adelante «la Aplicación»),
+                el usuario —o el representante legal de la empresa que la opera— declara haber leído, comprendido
+                y aceptado íntegramente los presentes Términos y Condiciones. Si no está de acuerdo con alguno de
+                sus términos, debe abstenerse de usar la Aplicación.</p>
+
+            <h2>1. Licencia de Uso</h2>
+            <p>NexoBits otorga al usuario una licencia no exclusiva, intransferible y revocable para utilizar la
+                Aplicación en el número máximo de dispositivos o terminales permitidos por el plan adquirido:</p>
+            <ul>
+                <li><strong>Plan Básico:</strong> uso en 1 terminal o dispositivo.</li>
+                <li><strong>Plan Premium:</strong> uso en hasta 3 terminales o dispositivos simultáneos (Desktop o Mobile).</li>
+                <li><strong>Modo Demo:</strong> acceso completo durante 15 días sin costo. No renovable con el
+                    mismo identificador de dispositivo o equipo.</li>
+            </ul>
+            <p>Queda prohibido modificar, descompilar, distribuir o sublicenciar la Aplicación o cualquiera de
+                sus componentes sin autorización expresa y por escrito del desarrollador.</p>
+
+            <h2>2. Datos Comerciales y Responsabilidad del Usuario</h2>
+            <p>La Aplicación almacena toda la información comercial (productos, ventas, clientes, créditos y configuración)
+                de forma local en el dispositivo mediante SQLite. El desarrollador de VendlyPOS:</p>
+            <ul>
+                <li>No tiene acceso remoto a los datos comerciales del usuario.</li>
+                <li>No almacena ni replica datos de ventas ni créditos en servidores externos.</li>
+                <li>No vende ni comparte información comercial con terceros.</li>
+            </ul>
+            <p>El usuario es el único responsable de la custodia física del dispositivo y de realizar copias de
+                seguridad de sus datos. La pérdida de datos por daño, robo, restablecimiento de fábrica o fallo
+                del dispositivo no es responsabilidad del desarrollador.</p>
+
+            <h2>3. Sincronización y Uso de Internet</h2>
+            <p>La Aplicación utiliza internet exclusivamente para:</p>
+            <ul>
+                <li>Verificar el estado de validez de la licencia con el servidor Firebase (RTDB).</li>
+                <li>Sincronizar catálogos, ventas y configuración con el servidor local del negocio
+                    (red interna LAN/mDNS), cuando el usuario lo configure.</li>
+                <li>Recibir notificaciones locales (nuevos pedidos, stock bajo, vencimiento de licencias).</li>
+            </ul>
+            <p>La Aplicación puede funcionar en modo offline. La conexión a internet es requerida para la
+                activación inicial y para la verificación periódica de licencia. Pasado el período de gracia
+                offline (72 horas), la Aplicación solicitará conexión para continuar operando.</p>
+
+            <h2>4. Uso Aceptable</h2>
+            <p>El usuario se compromete a utilizar la Aplicación únicamente con fines comerciales legítimos y
+                de conformidad con las leyes locales aplicables. Está expresamente prohibido:</p>
+            <ul>
+                <li>Usar la Aplicación para actividades ilegales, fraudulentas o que violen derechos de terceros.</li>
+                <li>Intentar eludir, hackear o manipular el sistema de validación de licencias.</li>
+                <li>Compartir las credenciales de licencia con terceros no autorizados.</li>
+                <li>Usar la Aplicación en más dispositivos de los permitidos por el plan adquirido.</li>
+            </ul>
+
+            <h2>5. Exclusión de Garantías</h2>
+            <div class="highlight-box warning">
+                <p>LA APLICACIÓN SE PROPORCIONA «TAL CUAL» (<em>AS-IS</em>) SIN GARANTÍAS DE NINGÚN TIPO,
+                    EXPRESAS NI IMPLÍCITAS. EL DESARROLLADOR NO GARANTIZA QUE LA APLICACIÓN SEA ININTERRUMPIDA,
+                    LIBRE DE ERRORES NI COMPLETAMENTE SEGURA. EL USUARIO ASUME TODO EL RIESGO DERIVADO DEL USO
+                    DE LA APLICACIÓN Y DE LA GESTIÓN DE SU INFORMACIÓN COMERCIAL.</p>
+            </div>
+
+            <h2>6. Limitación de Responsabilidad</h2>
+            <p>En ningún caso el desarrollador será responsable de daños directos, indirectos, incidentales o
+                consecuentes que surjan del uso o la imposibilidad de uso de la Aplicación, incluyendo pero no
+                limitado a: pérdida de datos, deudas de clientes, pérdida de ingresos o interrupción del negocio. La responsabilidad
+                máxima del desarrollador no excederá el monto pagado por la licencia durante los 3 meses previos
+                al evento que origina la reclamación.</p>
+
+            <h2>7. Modificaciones de los Términos</h2>
+            <p>El desarrollador se reserva el derecho de modificar estos Términos en cualquier momento. Los cambios
+                serán publicados en la versión en línea de este documento. El uso continuado de la Aplicación tras
+                la publicación de cambios constituye la aceptación de los nuevos términos.</p>
+
+            <h2>8. Ley Aplicable</h2>
+            <p>Estos Términos se rigen por las leyes de la República de El Salvador. Cualquier controversia que
+                surja en relación con estos Términos será sometida a la jurisdicción de los tribunales competentes
+                de dicho territorio, salvo acuerdo en contrario entre las partes.</p>
+
+            <h2>9. Contacto</h2>
+            <p>Para consultas sobre estos Términos y Condiciones o para ejercer sus derechos como usuario:</p>
+            <ul>
+                <li><strong>Desarrollador:</strong> NexoBits — Soluciones de Software Independientes</li>
+                <li><strong>Correo electrónico:</strong> soporte-vendlypos@googlegroups.com</li>
+                <li><strong>WhatsApp:</strong> +503 7566-6226</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 <strong>VendlyPOS</strong> (Windows Desktop & Android). Desarrollado por <strong>NexoBits</strong> — Soluciones de Software Independientes.</p>
+        <p style="margin-top: 8px;">Documento oficial disponible en línea como URL de Política de Privacidad y Términos de Servicio para Google Cloud Platform y Google Play Store.</p>
+    </footer>
+
+</body>
+</html>

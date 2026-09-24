@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condiciones del Servicio | VendlyPOS (Desktop & Android)</title>
+    <meta name="description" content="Términos y Condiciones del Servicio de VendlyPOS para Windows Desktop y Android Mobile. Soluciones de punto de venta y gestión comercial por NexoBits.">
+    <style>
+        :root {
+            --bg-main: #05070c;
+            --bg-card: #0b111e;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --border: #1e293b;
+            --code-bg: #1e1b4b;
+            --code-text: #818cf8;
+            --green: #22c55e;
+            --amber: #f59e0b;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .top-glow {
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #06b6d4);
+            width: 100%;
+        }
+
+        header {
+            background-color: rgba(11, 17, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-title);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 40px auto 60px auto;
+            padding: 0 24px;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 9px 22px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover,
+        .nav-pill:focus {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .nav-pill.active {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.12);
+        }
+
+        .policy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .policy-card::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--green);
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-top: 44px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #a5b4fc;
+            border-bottom-style: solid;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: var(--code-text);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        .highlight-box {
+            background: rgba(30, 41, 59, 0.4);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--amber);
+        }
+
+        .highlight-box.danger {
+            border-left-color: var(--red);
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 24px 0;
+        }
+
+        .plan-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .plan-card h4 {
+            color: #f8fafc;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .plan-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px 60px 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            background-color: #030508;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            border-bottom-color: transparent;
+        }
+
+        @media (max-width: 640px) {
+            .container { margin: 20px auto; }
+            .policy-card { padding: 30px 20px; border-radius: 12px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .nav-pills { gap: 10px; }
+            .nav-pill { padding: 8px 16px; font-size: 13px; width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-glow"></div>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🐰</span> VendlyPOS
+        </a>
+    </header>
+
+    <div class="container">
+
+        <div class="nav-pills">
+            <a href="index.html" class="nav-pill">← Volver al Inicio</a>
+            <a href="privacidad.html" class="nav-pill">Política de Privacidad</a>
+            <a href="privacidad.html#seguridad-datos" class="nav-pill">Seguridad de Datos</a>
+            <a href="condiciones.html" class="nav-pill active">Condiciones del Servicio</a>
+        </div>
+
+        <div class="policy-card">
+            <span class="badge">Marco Legal y Comercial</span>
+            <h1>Condiciones del Servicio</h1>
+            <div class="date">Vigente a partir de: 23 de septiembre de 2026</div>
+
+            <p>El presente documento establece las <strong>Condiciones del Servicio</strong> (en adelante, «las Condiciones» o «el Acuerdo»)
+                que rigen el acceso, instalación, suscripción y uso de la plataforma de punto de venta (POS) y administración comercial
+                <strong>VendlyPOS</strong> en sus ediciones para <strong>Windows Desktop</strong> y <strong>Android Mobile</strong>
+                (en adelante, «la Aplicación» o «el Software»), desarrollada y provista por <strong>NexoBits</strong>
+                (en adelante, «el Desarrollador» o «el Proveedor»).</p>
+
+            <p>Al descargar, instalar, activar mediante clave de licencia o utilizar la Aplicación, la persona natural o jurídica
+                que opera el establecimiento comercial (en adelante, «el Usuario» o «el Cliente») declara y garantiza que posee la
+                capacidad legal suficiente para vincularse comercialmente y acepta en su totalidad las presentes Condiciones.
+                Si no está de acuerdo con alguno de los términos aquí contenidos, debe abstenerse de usar el Software y desinstalarlo inmediatamente.</p>
+
+            <div class="highlight-box success">
+                <p><strong>Principio Operativo:</strong> VendlyPOS es una solución B2B orientada a la soberanía de datos del comerciante.
+                    Toda la base de datos comercial reside de forma local y privada en sus dispositivos (SQLite). El software no impone dependencia
+                    de servidores centrales propietarios para la venta diaria en mostrador ni comercializa información de sus operaciones.</p>
+            </div>
+
+            <!-- 1. Objeto y Descripción del Servicio -->
+            <h2>1. Objeto y Descripción del Servicio</h2>
+            <p>VendlyPOS es una suite tecnológica diseñada para optimizar las operaciones de comercio minorista y mayorista, integrando:</p>
+            <ul>
+                <li><strong>Terminal Punto de Venta (TPV/POS):</strong> Registro de ventas, control de inventario físico, catálogo de productos con códigos de barra y apertura/cierre de turnos de caja.</li>
+                <li><strong>Arquitectura Multiplataforma Híbrida:</strong> Terminal maestro para Windows Desktop con sincronización en red local (LAN/mDNS) hacia terminales Android móviles dentro del mismo local comercial.</li>
+                <li><strong>Módulos Comerciales Especializados:</strong> Control de cartera de créditos y cobros (fiados), programas de lealtad de clientes y alertas de abastecimiento crítico.</li>
+                <li><strong>Catálogo Web Digital:</strong> Publicación opcional de productos en catálogo web para recepción de pedidos en tiempo real.</li>
+                <li><strong>Facturación Electrónica DTE (El Salvador):</strong> Módulo opcional para transmisión de Documentos Tributarios Electrónicos conforme a la normativa vigente del Ministerio de Hacienda de El Salvador.</li>
+                <li><strong>Copias de Seguridad en la Nube:</strong> Integración opcional y voluntaria con Google Drive API para resguardo automatizado de bases de datos.</li>
+            </ul>
+
+            <!-- 2. Licenciamiento de Uso y Modalidades -->
+            <h2>2. Licenciamiento de Uso y Modalidades</h2>
+            <p>NexoBits concede al Usuario una <strong>licencia de uso comercial de software</strong> no exclusiva, intransferible, revocable
+                y limitada al número de terminales o dispositivos estipulados según el plan contratado:</p>
+
+            <div class="plan-grid">
+                <div class="plan-card">
+                    <h4>Plan Básico</h4>
+                    <p>Habilita la operación en 1 terminal única (Windows Desktop o Android Mobile) con base de datos local completa.</p>
+                </div>
+                <div class="plan-card">
+                    <h4>Plan Premium / Red Local</h4>
+                    <p>Habilita la operación simultánea en hasta 3 terminales coordinadas (servidor Desktop + terminales móviles por LAN).</p>
+                </div>
+                <div class="plan-card">
+                    <h4>Modo Demostración (Demo)</h4>
+                    <p>Acceso integral a todas las funcionalidades por un lapso improrrogable de 15 días calendario para fines de evaluación técnica.</p>
+                </div>
+            </div>
+
+            <p><strong>Restricciones de la Licencia:</strong> Queda estrictamente prohibido al Usuario:</p>
+            <ul>
+                <li>Modificar, descompilar, realizar ingeniería inversa o desensamblar cualquier binario o código fuente de la Aplicación.</li>
+                <li>Sublicenciar, arrendar, revender, redistribuir o comercializar copias no autorizadas del Software a terceros.</li>
+                <li>Alterar, eludir o manipular los mecanismos criptográficos de validación de licencias basados en el identificador de hardware (<code>device_uuid</code>).</li>
+                <li>Compartir o transferir las credenciales o claves de activación de licencia a establecimientos comerciales distintos al contratante.</li>
+            </ul>
+
+            <!-- 3. Soberanía de Datos y Copias de Seguridad -->
+            <h2>3. Soberanía de Datos y Copias de Seguridad</h2>
+            <p>La Aplicación funciona bajo el modelo de almacenamiento local descentralizado (SQLite). En virtud de esta arquitectura:</p>
+            <ul>
+                <li><strong>Propiedad de la Información:</strong> Todos los datos de transacciones, inventarios, costos, clientes y cuentas por cobrar pertenecen de forma exclusiva al Usuario. NexoBits no tiene acceso remoto, no recopila, no monetiza ni inspecciona la información comercial de su negocio.</li>
+                <li><strong>Custodia y Resguardo:</strong> El Usuario es el único y exclusivo responsable de la seguridad física de sus equipos, de la confidencialidad de sus contraseñas de acceso y de ejecutar periódicamente copias de seguridad de la base de datos (<code>store.db</code>).</li>
+                <li><strong>Exención por Pérdida de Datos:</strong> El Desarrollador no se hace responsable por pérdidas de información ocasionadas por fallas de hardware, ataques de software malicioso en el equipo del Usuario, hurto, borrado accidental o restablecimientos de fábrica.</li>
+            </ul>
+
+            <!-- 4. Integraciones con Servicios de Terceros -->
+            <h2>4. Integraciones con Servicios de Terceros</h2>
+            <p>VendlyPOS permite la interoperabilidad con plataformas externas para enriquecer sus funciones operativas:</p>
+
+            <h3>A. Google Drive API (Copias de Seguridad)</h3>
+            <p>El Usuario puede vincular voluntariamente su cuenta de Google Drive para subir y restaurar copias de seguridad de la base de datos comercial:</p>
+            <ul>
+                <li>La integración opera bajo el alcance estricto <code>https://www.googleapis.com/auth/drive.file</code>.</li>
+                <li>VendlyPOS únicamente interactúa con los archivos y carpetas creados por la propia aplicación (directorio <code>VendlyPOS_Backups</code>). Bajo ninguna circunstancia la Aplicación tiene acceso para ver, leer, modificar o eliminar archivos ajenos almacenados en la unidad de Google Drive del Usuario.</li>
+                <li>El uso y la transferencia que hace VendlyPOS de la información recibida de las APIs de Google se apegan de manera rigurosa a la
+                    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de las API de Google</a>,
+                    incluidos los requisitos de <strong>Uso Limitado (Limited Use)</strong>.</li>
+            </ul>
+
+            <h3>B. Google Identity Services (OAuth 2.0)</h3>
+            <p>El servicio de identidad de Google (alcances <code>openid</code>, <code>email</code>, <code>profile</code>) se provee exclusivamente para la validación administrativa de titularidad de la tienda en el catálogo web y la eventual recuperación de contraseñas de acceso administrativo, sin recolección de contraseñas ni acceso a comunicaciones privadas.</p>
+
+            <h3>C. Ministerio de Hacienda de El Salvador (DTE / Facturación Electrónica)</h3>
+            <p>Para los comercios contribuyentes que activen la emisión de DTE:</p>
+            <ul>
+                <li>El Usuario es legalmente responsable de la veracidad y exactitud tributaria de los datos consignados en las facturas, comprobantes de crédito fiscal y notas remitidas al Ministerio de Hacienda.</li>
+                <li>La custodia de la clave privada de firma digital (formato PEM / llave criptográfica) y las credenciales API del MH es responsabilidad exclusiva del Usuario. La Aplicación las almacena cifradas localmente y no las transmite a servidores de NexoBits.</li>
+                <li>NexoBits no se responsabiliza por retrasos, rechazos de documentos o sanciones fiscales originadas por indisponibilidad de los servidores del Ministerio de Hacienda (<code>api.dtes.mh.gob.sv</code>) o por inconsistencias en los datos ingresados por el contribuyente.</li>
+            </ul>
+
+            <!-- 5. Conectividad y Funcionamiento Offline -->
+            <h2>5. Conectividad y Período de Gracia Offline</h2>
+            <p>VendlyPOS está diseñado para operar con alta disponibilidad en el mostrador sin requerir conexión continua e ininterrumpida a internet:</p>
+            <ul>
+                <li><strong>Operación sin Internet:</strong> El cobro en caja, la impresión de tickets físicos y el descuento de inventario funcionan de manera autónoma y local.</li>
+                <li><strong>Verificación de Licencia y Período de Gracia:</strong> La Aplicación requiere conectividad a internet para su activación inicial y validaciones periódicas con la base de licencias de Firebase. La Aplicación otorga un período de gracia de <strong>72 horas continuas offline</strong>. Transcurrido este plazo sin validación de red, el sistema requerirá conectarse a internet para reanudar operaciones.</li>
+            </ul>
+
+            <!-- 6. Exclusión de Garantías -->
+            <h2>6. Exclusión de Garantías</h2>
+            <div class="highlight-box warning">
+                <p>LA APLICACIÓN SE ENTREGA «TAL CUAL» (<em>AS-IS</em>) Y «SEGÚN DISPONIBILIDAD», SIN GARANTÍAS DE NINGÚN TIPO,
+                    EXPRESAS O IMPLÍCITAS, INCLUYENDO, DE FORMA NO TAXATIVA, GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN A UN PROPÓSITO PARTICULAR
+                    O AUSENCIA DE ERRORES DE SOFTWARE. NEXOBITS NO GARANTIZA QUE EL FUNCIONAMIENTO DE LA APLICACIÓN SEA ININTERRUMPIDO,
+                    NI QUE ESTÉ COMPLETAMENTE LIBRE DE DEFECTOS O VULNERABILIDADES DEL SISTEMA OPERATIVO ANFITRIÓN.</p>
+            </div>
+
+            <!-- 7. Limitación de Responsabilidad -->
+            <h2>7. Limitación de Responsabilidad</h2>
+            <p>En la máxima medida permitida por la legislación aplicable, NexoBits, sus desarrolladores y colaboradores no serán responsables
+                en ningún caso por daños directos, indirectos, lucro cesante, pérdida de ingresos comerciales, interrupción del negocio, pérdidas de datos,
+                o multas tributarias derivadas del uso, imposibilidad de uso o configuración errónea del Software.</p>
+            <p>En cualquier circunstancia, la responsabilidad indemnizatoria total acumulada del Desarrollador frente al Usuario quedará estrictamente
+                limitada al importe efectivamente pagado por el Usuario por concepto de licencia durante los tres (3) meses inmediatamente anteriores
+                al hecho que dio origen al reclamo.</p>
+
+            <!-- 8. Propiedad Intelectual -->
+            <h2>8. Propiedad Intelectual</h2>
+            <p>Todos los derechos de propiedad intelectual, derechos de autor, marcas registradas, logotipos, código fuente, arquitecturas de software,
+                interfaces gráficas y documentación asociados a VendlyPOS son y permanecerán bajo la titularidad exclusiva de <strong>NexoBits</strong>.
+                La adquisición de una licencia comercial no transfiere ningún derecho de propiedad sobre el software, sino únicamente el derecho limitado
+                de uso conforme a estas Condiciones.</p>
+
+            <!-- 9. Suspensión y Terminación -->
+            <h2>9. Suspensión y Terminación</h2>
+            <p>NexoBits se reserva la facultad de revocar la licencia de uso y deshabilitar el acceso a los servicios de sincronización y validación,
+                sin derecho a reembolso, en los siguientes supuestos:</p>
+            <ul>
+                <li>Incumplimiento de cualquiera de las cláusulas y restricciones de uso estipuladas en el presente Acuerdo.</li>
+                <li>Uso de la Aplicación para actividades comerciales fraudulentas o que infrinjan disposiciones legales vigentes.</li>
+                <li>Intento reiterado de vulnerar los sistemas de seguridad, bases de datos remotas o mecanismos de licenciamiento.</li>
+                <li>Falta de pago o rechazo de los cargos asociados a la suscripción activa.</li>
+            </ul>
+
+            <!-- 10. Modificaciones a las Condiciones -->
+            <h2>10. Modificaciones a las Condiciones</h2>
+            <p>NexoBits se reserva el derecho de actualizar o modificar estas Condiciones del Servicio en cualquier momento con el propósito de
+                adaptarlas a evoluciones normativas, mejoras funcionales o requerimientos de plataformas asociadas (Google Play, Google Cloud).
+                Las modificaciones entrarán en vigencia a partir de su publicación en este sitio web. El uso continuado de la Aplicación tras
+                la publicación de dichas modificaciones constituye la aceptación vinculante de las nuevas condiciones.</p>
+
+            <!-- 11. Ley Aplicable y Jurisdicción -->
+            <h2>11. Ley Aplicable y Jurisdicción</h2>
+            <p>Las presentes Condiciones se interpretarán y regirán de conformidad con las leyes de la <strong>República de El Salvador</strong>.
+                Para la resolución de cualquier conflicto, discrepancia o reclamación que derive de la interpretación o ejecución de este contrato,
+                las partes acuerdan someterse expresamente a la jurisdicción de los tribunales ordinarios de la ciudad de San Salvador, El Salvador,
+                renunciando a cualquier otro fuero que pudiera corresponderles.</p>
+
+            <!-- 12. Contacto y Soporte Técnico -->
+            <h2>12. Contacto y Soporte Técnico</h2>
+            <p>Para consultas legales, asistencia operativa, adquisiciones de licencias o dudas sobre estas Condiciones del Servicio:</p>
+            <ul>
+                <li><strong>Desarrollador:</strong> NexoBits — Soluciones de Software Independientes</li>
+                <li><strong>Correo de Soporte Oficial:</strong> <a href="mailto:soporte-vendlypos@googlegroups.com">soporte-vendlypos@googlegroups.com</a></li>
+                <li><strong>Atención Directa WhatsApp:</strong> +503 7566-6226</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 <strong>VendlyPOS</strong> (Windows Desktop & Android). Desarrollado por <strong>NexoBits</strong> — Soluciones de Software Independientes.</p>
+        <p style="margin-top: 8px;">Documento oficial disponible en línea como URL de Condiciones del Servicio para Google Cloud Platform y Google Play Store.</p>
+    </footer>
+
+</body>
+</html>
