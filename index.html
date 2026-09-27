@@ -119,10 +119,19 @@
 
         .logo-icon {
             background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-            padding: 6px 10px;
+            width: 36px;
+            height: 36px;
             border-radius: 10px;
-            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
             box-shadow: 0 0 20px var(--primary-glow);
+            flex-shrink: 0;
+        }
+
+        .logo-icon svg {
+            display: block;
         }
 
         .nav-links {
@@ -726,11 +735,98 @@
             color: var(--text-heading);
         }
 
+        /* ============================================================
+           DISEÑO RESPONSIVO AVANZADO (TABLET Y MÓVIL)
+        ============================================================ */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 38px; }
-            .dual-architecture { grid-template-columns: 1fr; padding: 32px 24px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .nav-links { display: none; }
+            .hero h1 { font-size: clamp(2.1rem, 5vw, 2.75rem); }
+            .features-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+            .dual-architecture { grid-template-columns: 1fr; padding: 36px 24px; gap: 32px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+        }
+
+        @media (max-width: 640px) {
+            header { padding: 12px 0; }
+            .nav-container { padding: 0 16px; }
+            .logo { font-size: 19px; gap: 8px; }
+            .logo-icon { width: 32px; height: 32px; border-radius: 8px; }
+            .logo-icon svg { width: 16px; height: 16px; }
+            .nav-container .btn { padding: 8px 14px; font-size: 13px; }
+
+            .container { padding: 0 16px; }
+
+            .hero { padding: 48px 0 36px 0; }
+            .pill-badge { font-size: 11.5px; padding: 5px 12px; max-width: 100%; white-space: normal; text-align: center; }
+            .hero h1 { font-size: clamp(1.75rem, 7.5vw, 2.3rem); line-height: 1.2; margin-bottom: 16px; }
+            .hero p { font-size: 15px; line-height: 1.55; margin-bottom: 28px; }
+            .hero-actions { flex-direction: column; width: 100%; gap: 12px; margin-bottom: 40px; }
+            .hero-actions .btn { width: 100%; justify-content: center; padding: 13px 20px; font-size: 15px; }
+
+            .showcase-window { padding: 16px 12px; border-radius: 14px; margin-bottom: 50px; }
+            .window-header { margin-bottom: 16px; padding-bottom: 12px; }
+            .window-title { font-size: 11px; }
+            .dashboard-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+            .stat-card { padding: 12px 10px; border-radius: 10px; }
+            .stat-card .label { font-size: 10px; margin-bottom: 4px; }
+            .stat-card .value { font-size: 18px; }
+            .stat-card .badge-mini { font-size: 9.5px; padding: 1px 6px; }
+
+            .section-header { margin-bottom: 32px; }
+            .section-header h2 { font-size: 24px; line-height: 1.25; }
+            .section-header p { font-size: 14px; }
+
+            .features-grid { grid-template-columns: 1fr; gap: 16px; margin-bottom: 60px; }
+            .feature-card { padding: 22px 18px; border-radius: 14px; }
+            .feature-icon { width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px; }
+            .feature-card h3 { font-size: 17px; }
+            .feature-card p { font-size: 13.5px; }
+
+            .dual-architecture { padding: 22px 16px; border-radius: 14px; margin-bottom: 60px; }
+            .dual-info h2 { font-size: 22px; line-height: 1.25; }
+            .dual-info p { font-size: 14px; margin-bottom: 16px; }
+            .feature-checklist li { font-size: 13px; gap: 8px; }
+            .device-box { padding: 14px 12px; gap: 12px; border-radius: 10px; }
+            .device-icon { font-size: 24px; }
+            .device-box h4 { font-size: 14px; }
+            .device-box p { font-size: 12px; }
+
+            .plans-grid { grid-template-columns: 1fr; gap: 20px; margin-bottom: 60px; }
+            .pricing-card { padding: 24px 18px; border-radius: 16px; }
+            .pricing-card.popular { transform: none; }
+            .plan-title { font-size: 20px; }
+            .plan-desc { font-size: 13.5px; margin-bottom: 18px; }
+            .plan-features { margin-bottom: 24px; }
+            .plan-features li { font-size: 13.5px; margin-bottom: 10px; }
+            .pricing-card .btn { width: 100%; justify-content: center; padding: 12px 18px; font-size: 14px; }
+
+            details { padding: 14px 16px; border-radius: 10px; }
+            summary { font-size: 14.5px; gap: 10px; line-height: 1.35; }
+            details p { font-size: 13.5px; line-height: 1.5; }
+
+            .cta-box { padding: 36px 18px; border-radius: 16px; margin-bottom: 50px; }
+            .cta-box h2 { font-size: 23px; line-height: 1.25; margin-bottom: 12px; }
+            .cta-box p { font-size: 14px; margin-bottom: 22px; }
+            .cta-box .btn { width: 100%; max-width: 100%; padding: 13px 18px !important; font-size: 14px !important; white-space: normal; text-align: center; }
+
+            footer { padding: 40px 0 28px 0; }
+            .footer-grid { gap: 24px; }
+            .footer-brand h3 { font-size: 18px; }
+            .footer-brand p { font-size: 13px; }
+            .footer-col h4 { font-size: 13px; margin-bottom: 12px; }
+            .footer-col li { margin-bottom: 8px; }
+            .footer-col a { font-size: 13px; }
+            .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; font-size: 12px; }
+
+            .cookie-banner { bottom: 12px; width: calc(100% - 20px); padding: 16px 14px; border-radius: 12px; }
+            .cookie-actions { flex-direction: column; width: 100%; }
+            .cookie-actions .cookie-btn { width: 100%; text-align: center; justify-content: center; }
+        }
+
+        @media (max-width: 380px) {
+            .logo { font-size: 17px; }
+            .nav-container .btn { padding: 6px 10px; font-size: 12px; }
+            .dashboard-grid { grid-template-columns: 1fr; }
         }
 
         /* Accesibilidad WCAG 2.2 AA: Foco Visible */
@@ -838,7 +934,15 @@
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🐰</span> VendlyPOS
+                <span class="logo-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                        <path d="M7 7h10M7 11h6"></path>
+                    </svg>
+                </span>
+                <span>VendlyPOS</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#caracteristicas">Características</a></li>
@@ -1100,7 +1204,17 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>🐰 VendlyPOS</h3>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                        <span class="logo-icon" aria-hidden="true" style="width: 28px; height: 28px;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                                <path d="M7 7h10M7 11h6"></path>
+                            </svg>
+                        </span>
+                        <h3 style="margin-bottom: 0;">VendlyPOS</h3>
+                    </div>
                     <p>
                         Solución integral de punto de venta y gestión comercial para Windows Desktop y Android Mobile. Desarrollado con orgullo por NexoBits.
                     </p>

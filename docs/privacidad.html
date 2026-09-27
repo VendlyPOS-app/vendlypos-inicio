@@ -67,10 +67,19 @@
 
         .logo-icon {
             background: linear-gradient(135deg, #4f46e5, #6366f1);
-            padding: 6px 10px;
+            width: 34px;
+            height: 34px;
             border-radius: 8px;
-            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
             box-shadow: 0 0 15px var(--accent-glow);
+            flex-shrink: 0;
+        }
+
+        .logo-icon svg {
+            display: block;
         }
 
         .container {
@@ -334,14 +343,44 @@
         }
 
         @media (max-width: 640px) {
-            .container { margin: 20px auto; }
-            .policy-card { padding: 30px 20px; border-radius: 12px; }
-            h1 { font-size: 26px; }
-            h2 { font-size: 18px; }
-            .nav-pills { gap: 10px; }
-            .nav-pill { padding: 8px 16px; font-size: 13px; width: 100%; text-align: center; }
-            .data-table { font-size: 12px; }
-            .data-table th, .data-table td { padding: 10px 10px; }
+            header { padding: 14px 0; }
+            .container { margin: 16px auto 40px auto; padding: 0 14px; }
+            .nav-pills {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                justify-content: flex-start;
+                gap: 8px;
+                padding: 4px 2px 14px 2px;
+                margin-bottom: 20px;
+                scrollbar-width: none;
+            }
+            .nav-pills::-webkit-scrollbar { display: none; }
+            .nav-pill {
+                white-space: nowrap;
+                flex-shrink: 0;
+                padding: 7px 15px;
+                font-size: 12.5px;
+            }
+            .policy-card { padding: 24px 16px; border-radius: 12px; }
+            h1 { font-size: 22px; line-height: 1.25; margin-bottom: 10px; }
+            h2 { font-size: 17px; margin-top: 28px; margin-bottom: 14px; }
+            h3 { font-size: 15px; margin-top: 20px; }
+            p { font-size: 14px; text-align: left; margin-bottom: 16px; }
+            li { font-size: 13.5px; padding-left: 20px; margin-bottom: 10px; }
+            .highlight-box { padding: 14px 16px; margin: 20px 0; }
+            .highlight-box p { font-size: 13px; }
+            .data-table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                font-size: 12px;
+                min-width: 500px;
+            }
+            .data-table th, .data-table td { padding: 8px 8px; }
+            footer { padding: 30px 16px 40px 16px; font-size: 12px; }
         }
     </style>
 </head>
@@ -351,7 +390,15 @@
 
     <header>
         <a href="index.html" class="logo">
-            <span class="logo-icon">🐰</span> VendlyPOS
+            <span class="logo-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                    <path d="M7 7h10M7 11h6"></path>
+                </svg>
+            </span>
+            <span>VendlyPOS</span>
         </a>
     </header>
 
