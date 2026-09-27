@@ -732,6 +732,100 @@
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .nav-links { display: none; }
         }
+
+        /* Accesibilidad WCAG 2.2 AA: Foco Visible */
+        :focus { outline: none; }
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 2px solid #a5b4fc !important;
+            outline-offset: 3px !important;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.35) !important;
+            border-radius: 6px;
+        }
+
+        /* Banner de Cookies Técnicas */
+        .cookie-banner {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 640px;
+            background: rgba(11, 17, 30, 0.95);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            border-radius: var(--radius-md);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 102, 241, 0.2);
+            backdrop-filter: blur(14px);
+            padding: 20px 24px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            animation: slideUpCookie 0.4s ease both;
+        }
+
+        @keyframes slideUpCookie {
+            from { opacity: 0; transform: translate(-50%, 20px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        .cookie-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-heading);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .cookie-text {
+            font-size: 13px;
+            color: var(--text-sub);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .cookie-text a {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            margin-top: 4px;
+        }
+
+        .cookie-btn {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+
+        .cookie-btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .cookie-btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .cookie-btn-secondary {
+            background: rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .cookie-btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.14);
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -1030,18 +1124,51 @@
                     <h4>Legal & Privacidad</h4>
                     <ul>
                         <li><a href="privacidad.html">Política de Privacidad</a></li>
-                        <li><a href="privacidad.html#seguridad-datos">Seguridad de Datos</a></li>
                         <li><a href="condiciones.html">Condiciones del Servicio</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                        <li><a href="reembolsos.html">Reembolsos y Retracto</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <span>© 2026 VendlyPOS & NexoBits — Todos los derechos reservados.</span>
-                <span>Dominio autorizado: <a href="https://vendlypos.shop" target="_blank">vendlypos.shop</a></span>
+                <span>© 2026 VendlyPOS & NexoBits — San Salvador, El Salvador. Todos los derechos reservados.</span>
+                <span>Atención al Consumidor: <a href="https://concilia.defensoria.gob.sv" target="_blank" rel="noopener">Defensoría del Consumidor (910)</a></span>
             </div>
         </div>
     </footer>
+
+    <!-- Banner Informativo de Cookies Técnicas -->
+    <aside id="cookie-banner" class="cookie-banner" role="region" aria-label="Aviso de privacidad y cookies" style="display: none;">
+        <div class="cookie-header">
+            <span aria-hidden="true">🛡️</span>
+            <span>Privacidad y Cookies Técnicas</span>
+        </div>
+        <p class="cookie-text">
+            VendlyPOS utiliza únicamente cookies técnicas indispensables para la seguridad, tokens de sesión y preferencias locales. No utilizamos rastreadores de publicidad invasiva. Consulta nuestra <a href="cookies.html">Política de Cookies</a>.
+        </p>
+        <div class="cookie-actions">
+            <button id="btn-accept-cookies" class="cookie-btn cookie-btn-primary" type="button">Entendido</button>
+            <a href="cookies.html" class="cookie-btn cookie-btn-secondary" style="text-decoration: none; display: inline-flex; align-items: center;">Detalles Técnicos</a>
+        </div>
+    </aside>
+
+    <script>
+        (function() {
+            var STORAGE_KEY = 'vendlypos_cookie_notice_acknowledged';
+            var banner = document.getElementById('cookie-banner');
+            var btnAccept = document.getElementById('btn-accept-cookies');
+            if (banner && !localStorage.getItem(STORAGE_KEY)) {
+                banner.style.display = 'flex';
+            }
+            if (btnAccept && banner) {
+                btnAccept.addEventListener('click', function() {
+                    localStorage.setItem(STORAGE_KEY, 'true');
+                    banner.style.display = 'none';
+                });
+            }
+        })();
+    </script>
 
 </body>
 </html>

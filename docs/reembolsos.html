@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Reembolsos, Desistimiento y Cancelaciones | VendlyPOS</title>
+    <meta name="description" content="Política oficial de reembolsos, derecho legal de retracto y cancelación de suscripciones de VendlyPOS conforme a la legislación de El Salvador.">
+    <style>
+        :root {
+            --bg-main: #05070c;
+            --bg-card: #0b111e;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --text-title: #f8fafc;
+            --text-body: #94a3b8;
+            --text-muted: #64748b;
+            --border: #1e293b;
+            --code-bg: #1e1b4b;
+            --code-text: #818cf8;
+            --green: #22c55e;
+            --amber: #f59e0b;
+            --red: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
+            line-height: 1.7;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        .top-glow {
+            height: 4px;
+            background: linear-gradient(90deg, #4f46e5, #6366f1, #06b6d4);
+            width: 100%;
+        }
+
+        header {
+            background-color: rgba(11, 17, 30, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-title);
+            text-decoration: none;
+            letter-spacing: -0.025em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            padding: 6px 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 40px auto 60px auto;
+            padding: 0 24px;
+        }
+
+        .nav-pills {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 9px 22px;
+            border-radius: 9999px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-pill:hover,
+        .nav-pill:focus {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.05);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .nav-pill.active {
+            border-color: var(--accent);
+            color: var(--text-title);
+            background: rgba(99, 102, 241, 0.12);
+        }
+
+        .policy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-title);
+            line-height: 1.25;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .date {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .date::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--green);
+            border-radius: 50%;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-title);
+            margin-top: 44px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        li {
+            font-size: 15px;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        a {
+            color: #818cf8;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(129, 140, 248, 0.4);
+            transition: all 0.2s ease;
+        }
+
+        a:hover {
+            color: #a5b4fc;
+            border-bottom-style: solid;
+        }
+
+        .highlight-box {
+            background: rgba(30, 41, 59, 0.4);
+            border-left: 4px solid var(--accent);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--green);
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--amber);
+        }
+
+        .retract-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: #ffffff;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            box-shadow: 0 0 20px var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px 60px 24px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+            background-color: #030508;
+        }
+
+        @media (max-width: 640px) {
+            .container { margin: 20px auto; }
+            .policy-card { padding: 30px 20px; border-radius: 12px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .nav-pills { gap: 10px; }
+            .nav-pill { padding: 8px 16px; font-size: 13px; width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-glow"></div>
+
+    <header>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🐰</span> VendlyPOS
+        </a>
+    </header>
+
+    <div class="container">
+
+        <div class="nav-pills">
+            <a href="index.html" class="nav-pill">← Volver al Inicio</a>
+            <a href="privacidad.html" class="nav-pill">Política de Privacidad</a>
+            <a href="condiciones.html" class="nav-pill">Condiciones del Servicio</a>
+            <a href="cookies.html" class="nav-pill">Política de Cookies</a>
+            <a href="reembolsos.html" class="nav-pill active">Reembolsos y Retracto</a>
+        </div>
+
+        <div class="policy-card">
+            <span class="badge">Garantía al Consumidor</span>
+            <h1>Política de Desistimiento, Retracto y Reembolsos</h1>
+            <div class="date">Vigente a partir de: 27 de septiembre de 2026</div>
+
+            <p>En <strong>VendlyPOS</strong> (desarrollado por <strong>NexoBits</strong>), garantizamos un marco de contratación transparente, ético y plenamente alineado con la legislación vigente de la <strong>República de El Salvador</strong> en materia de comercio electrónico y protección al consumidor.</p>
+
+            <div class="highlight-box success">
+                <p><strong>Garantía Legal de Retracto:</strong> De conformidad con el <strong>Artículo 13-A de la Ley de Protección al Consumidor</strong> (D.L. N.º 776) y el <strong>Artículo 13 de la Ley de Comercio Electrónico</strong> (D.L. N.º 548) de El Salvador, todo cliente que adquiera una licencia o suscripción por medios electrónicos tiene derecho a revocar su compra dentro del plazo legal de <strong>ocho (8) días hábiles</strong> posteriores al pago inicial, con derecho al reembolso íntegro de lo abonado y sin penalización alguna.</p>
+            </div>
+
+            <!-- 1. Derecho Legal de Retracto -->
+            <h2>1. Alcance del Derecho Legal de Retracto (8 Días Hábiles)</h2>
+            <p>Si has adquirido una licencia de VendlyPOS (Plan Básico, Plan Multi-Caja o plan equivalente) y consideras que el software no satisface los requerimientos técnicos u operativos de tu negocio:</p>
+            <ul>
+                <li><strong>Plazo para Notificar:</strong> Dispones de <strong>ocho (8) días hábiles</strong> contados a partir del momento en que se completó el pago y se generó tu clave de licencia o activación inicial.</li>
+                <li><strong>Sin Justificación Obligatoria:</strong> No requieres acreditar fallas técnicas para ejercer tu derecho; basta con manifestar tu voluntad expresa de desistimiento unilateral.</li>
+                <li><strong>Cero Penalizaciones:</strong> NexoBits no aplicará retenciones por gastos administrativos, penalidades ni deducciones de comisión.</li>
+            </ul>
+
+            <!-- 2. Plazos y Métodos de Reembolso -->
+            <h2>2. Plazo y Liquidación del Reembolso</h2>
+            <p>Una vez recibida y confirmada la solicitud de retracto:</p>
+            <ul>
+                <li><strong>Plazo de Reintegro:</strong> El reembolso se efectuará en un plazo máximo de <strong>quince (15) días calendario</strong> contados a partir de la recepción formal de tu solicitud, según lo ordena el Artículo 13-A de la Ley de Protección al Consumidor.</li>
+                <li><strong>Medio de Reembolso:</strong> El reintegro se procesará a través del mismo método o canal de pago utilizado para la compra original (transferencia bancaria local en El Salvador, reversión en tarjeta de crédito/débito o plataforma digital autorizada).</li>
+                <li><strong>Revocación de Licencia:</strong> Tras formalizarse el reintegro, la clave de licencia asociada quedará revocada en el servidor central de validación, procediendo el usuario a desinstalar el software.</li>
+            </ul>
+
+            <!-- 3. Cancelación de Suscripciones Periódicas -->
+            <h2>3. Cancelación de Renovación de Suscripciones</h2>
+            <p>Para aquellos planes bajo modalidad de suscripción periódica (mensual o anual):</p>
+            <ul>
+                <li><strong>Libertad de Cancelación:</strong> Puedes dar de baja la renovación automática en cualquier momento, con al menos veinticuatro (24) horas de antelación a la fecha de cobro del siguiente ciclo.</li>
+                <li><strong>Sin Bloqueos ni Permanencia:</strong> No exigimos cláusulas forzosas de permanencia. La baja se tramita sin trámites engorrosos ni penalidades.</li>
+                <li><strong>Periodo Activo:</strong> La cancelación surte efecto a partir del vencimiento del periodo ya cancelado; mantendrás acceso pleno a las funcionalidades contratadas hasta el último día de tu ciclo vigente.</li>
+            </ul>
+
+            <!-- 4. Canales para Ejercer el Retracto -->
+            <h2>4. ¿Cómo Solicitar tu Retracto o Cancelación?</h2>
+            <p>Para registrar tu solicitud de manera inmediata, dispones de cualquiera de los siguientes canales oficiales:</p>
+            <ul>
+                <li><strong>Correo Oficial de Soporte:</strong> Envía un mensaje a <a href="mailto:soporte-vendlypos@googlegroups.com">soporte-vendlypos@googlegroups.com</a> con el asunto: <em>"Solicitud de Retracto Legal — [Nombre de tu Negocio]"</em>.</li>
+                <li><strong>Atención Rápida por WhatsApp:</strong> Comunícate al <strong>+503 7566-6226</strong> indicando tu comprobante de pago o folio de activación.</li>
+            </ul>
+
+            <div class="retract-box">
+                <h3 style="color: var(--text-title); margin-top: 0;">¿Deseas iniciar una solicitud de retracto o baja ahora?</h3>
+                <p style="font-size: 14px; margin-bottom: 12px; text-align: center;">Haz clic en el siguiente enlace para redactar tu solicitud directamente vía WhatsApp con atención prioritaria:</p>
+                <a href="https://wa.me/50375666226?text=Hola,%20deseo%20solicitar%20el%20ejercicio%20del%20Derecho%20de%20Retracto%20o%20la%20Baja%20de%20mi%20servicio%20VendlyPOS" target="_blank" class="btn-action">
+                    Contactar para Retracto o Cancelación
+                </a>
+            </div>
+
+            <!-- 5. Autoridad de Aplicación -->
+            <h2>5. Autoridad Competente en El Salvador</h2>
+            <p>Si consideras que tus derechos como consumidor han sido vulnerados o requieres orientación adicional sobre la legislación aplicable en El Salvador, puedes recurrir ante la <strong>Defensoría del Consumidor</strong> de la República de El Salvador:</p>
+            <ul>
+                <li><strong>Portal de Conciliación en Línea:</strong> <a href="https://concilia.defensoria.gob.sv" target="_blank" rel="noopener">concilia.defensoria.gob.sv</a></li>
+                <li><strong>Teléfono de Atención al Consumidor:</strong> 910 (llamada gratuita en El Salvador)</li>
+                <li><strong>WhatsApp Defensoría:</strong> +503 7844-1482</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 <strong>VendlyPOS</strong> (Windows Desktop & Android). Desarrollado por <strong>NexoBits</strong> — Soluciones de Software Independientes.</p>
+        <p style="margin-top: 8px;">Documento oficial disponible en línea para consulta pública en <a href="https://vendlypos.shop" target="_blank">vendlypos.shop</a>.</p>
+    </footer>
+
+</body>
+</html>
