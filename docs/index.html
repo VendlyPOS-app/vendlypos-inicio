@@ -624,34 +624,75 @@
             line-height: 1.4;
         }
 
-        .plan-price-box {
-            margin-bottom: 18px;
-            padding-bottom: 16px;
+        .plan-scope-box {
+            margin-bottom: 20px;
+            padding-bottom: 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .plan-price-num {
-            font-size: 32px;
-            font-weight: 900;
-            color: #ffffff;
-            line-height: 1;
-        }
-
-        .plan-price-cycle {
-            font-size: 13px;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .plan-price-badge {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 11.5px;
+        .plan-scope-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
             font-weight: 700;
             color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            padding: 2px 8px;
-            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            padding: 5px 12px;
+            border-radius: 9999px;
+            line-height: 1.3;
+        }
+
+        .btn-whatsapp-plan {
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            background: rgba(37, 211, 102, 0.12);
+            color: #25D366;
+            border: 1px solid rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp-plan:hover {
+            background: #25D366;
+            color: #052e16;
+            border-color: #25D366;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .pricing-card.popular .btn-whatsapp-plan {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+        }
+
+        .pricing-card.popular .btn-whatsapp-plan:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+        }
+
+        .pricing-card.enterprise .btn-whatsapp-plan {
+            background: linear-gradient(135deg, #8b5cf6 0%, #25D366 100%);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
+        }
+
+        .pricing-card.enterprise .btn-whatsapp-plan:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45);
         }
 
         .plan-features {
@@ -1080,8 +1121,9 @@
                 <li><a href="privacidad.html">Privacidad</a></li>
                 <li><a href="condiciones.html">Términos</a></li>
             </ul>
-            <a href="https://wa.me/50375666226?text=Hola,%20deseo%20probar%20VendlyPOS%20en%20mi%20negocio" target="_blank" class="btn btn-primary">
-                Contactar Asesor
+            <a href="https://wa.me/50375666226?text=Hola,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20VendlyPOS" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>WhatsApp</span>
             </a>
         </div>
     </header>
@@ -1098,8 +1140,9 @@
                 Automatiza tu mostrador, controla tu inventario en tiempo real, gestiona créditos a clientes y emite Facturación Electrónica DTE en El Salvador sin caídas ni dependencias forzadas de internet.
             </p>
             <div class="hero-actions">
-                <a href="https://wa.me/50375666226?text=Quiero%20solicitar%20la%20demo%20de%2015%20dias%20de%20VendlyPOS" target="_blank" class="btn btn-primary">
-                    Solicitar Demo de 15 Días
+                <a href="https://wa.me/50375666226?text=Quiero%20solicitar%20la%20demo%20de%2015%20dias%20de%20VendlyPOS" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                    <span>Solicitar Demo de 15 Días</span>
                 </a>
                 <a href="#caracteristicas" class="btn btn-secondary">
                     Explorar Funcionalidades
@@ -1224,7 +1267,7 @@
             </div>
         </section>
 
-        <!-- Plans & Pricing Section -->
+        <!-- Plans Section -->
         <section id="planes">
             <div class="section-header">
                 <div class="catalog-guarantee-pill">
@@ -1232,7 +1275,7 @@
                     <span>Catálogo y productos 100% ilimitados en todos los planes</span>
                 </div>
                 <h2>Planes Flexibles para tu Negocio</h2>
-                <p>Precios claros, sin sorpresas ni comisiones sobre tus ventas. Elige el plan que mejor impulse tu crecimiento.</p>
+                <p>Asesoría personalizada para cada etapa de tu negocio. Escríbenos directamente por WhatsApp para una atención a la medida de tus terminales.</p>
             </div>
 
             <div class="plans-grid">
@@ -1241,10 +1284,11 @@
                     <div>
                         <h3 class="plan-title">Plan Inicial</h3>
                         <p class="plan-desc">Para microcomercios y puestos de mostrador: cobro ágil y stock sin facturación tributaria.</p>
-                        <div class="plan-price-box">
-                            <span class="plan-price-num">$8</span>
-                            <span class="plan-price-cycle">/ mes</span>
-                            <div><span class="plan-price-badge">1 Terminal (PC o Móvil)</span></div>
+                        <div class="plan-scope-box">
+                            <span class="plan-scope-badge">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                                1 Terminal (PC o Móvil)
+                            </span>
                         </div>
                         <ul class="plan-features">
                             <li><strong>Ventas y catálogo ilimitados</strong></li>
@@ -1256,8 +1300,9 @@
                             <li>Soporte técnico por WhatsApp</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Inicial+de+VendlyPOS" target="_blank" class="btn btn-secondary">
-                        Contratar Plan Inicial
+                    <a href="https://wa.me/50375666226?text=Hola%2C+deseo+m%C3%A1s+informaci%C3%B3n+sobre+el+Plan+Inicial+de+VendlyPOS" target="_blank" class="btn-whatsapp-plan">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>Más Información al WhatsApp</span>
                     </a>
                 </div>
 
@@ -1266,10 +1311,11 @@
                     <div>
                         <h3 class="plan-title">Plan Básico</h3>
                         <p class="plan-desc">Para comercios formales con emisión de facturación electrónica y control de cuentas.</p>
-                        <div class="plan-price-box">
-                            <span class="plan-price-num">$15</span>
-                            <span class="plan-price-cycle">/ mes</span>
-                            <div><span class="plan-price-badge">Facturación Electrónica MH</span></div>
+                        <div class="plan-scope-box">
+                            <span class="plan-scope-badge" style="color: #34d399; background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.25);">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                Facturación Electrónica MH · 1 Terminal
+                            </span>
                         </div>
                         <ul class="plan-features">
                             <li><strong>Todo lo del Plan Inicial</strong></li>
@@ -1281,8 +1327,9 @@
                             <li>1 Terminal autorizada</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Basico+de+VendlyPOS" target="_blank" class="btn btn-secondary">
-                        Contratar Plan Básico
+                    <a href="https://wa.me/50375666226?text=Hola%2C+deseo+m%C3%A1s+informaci%C3%B3n+sobre+el+Plan+B%C3%A1sico+de+VendlyPOS" target="_blank" class="btn-whatsapp-plan">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>Más Información al WhatsApp</span>
                     </a>
                 </div>
 
@@ -1292,10 +1339,11 @@
                     <div>
                         <h3 class="plan-title">Plan Pro</h3>
                         <p class="plan-desc">Para retail dinámico, boutiques, farmacias y comercios con balanza y combo móvil.</p>
-                        <div class="plan-price-box">
-                            <span class="plan-price-num">$25</span>
-                            <span class="plan-price-cycle">/ mes</span>
-                            <div><span class="plan-price-badge" style="color: #a5b4fc; background: rgba(99, 102, 241, 0.2);">Combo 2 Equipos Incluido</span></div>
+                        <div class="plan-scope-box">
+                            <span class="plan-scope-badge" style="color: #a5b4fc; background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.3);">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><rect x="14" y="10" width="8" height="11" rx="2"/></svg>
+                                Combo 2 Equipos: 1 PC + 1 Móvil Satélite
+                            </span>
                         </div>
                         <ul class="plan-features">
                             <li><strong>Todo lo del Plan Básico</strong></li>
@@ -1309,8 +1357,9 @@
                             <li>Exportación completa a Excel y métricas</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Pro+de+VendlyPOS" target="_blank" class="btn btn-primary">
-                        Contratar Plan Pro
+                    <a href="https://wa.me/50375666226?text=Hola%2C+deseo+m%C3%A1s+informaci%C3%B3n+sobre+el+Plan+Pro+de+VendlyPOS" target="_blank" class="btn-whatsapp-plan">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>Más Información al WhatsApp</span>
                     </a>
                 </div>
 
@@ -1320,10 +1369,11 @@
                     <div>
                         <h3 class="plan-title">Plan Empresarial</h3>
                         <p class="plan-desc">Para restaurantes, talleres, cadenas y locales con múltiples cajas en red local.</p>
-                        <div class="plan-price-box">
-                            <span class="plan-price-num">$45</span>
-                            <span class="plan-price-cycle">/ mes · $400 / año</span>
-                            <div><span class="plan-price-badge" style="color: #c084fc; background: rgba(139, 92, 246, 0.2);">Hasta 5 Terminales en Red LAN</span></div>
+                        <div class="plan-scope-box">
+                            <span class="plan-scope-badge" style="color: #c084fc; background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.3);">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                Red Multi-Caja LAN hasta 5 Terminales
+                            </span>
                         </div>
                         <ul class="plan-features">
                             <li><strong>Todo lo del Plan Pro</strong></li>
@@ -1337,8 +1387,9 @@
                             <li>Soporte técnico VIP prioritario</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Empresarial+de+VendlyPOS" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);">
-                        Contratar Empresarial
+                    <a href="https://wa.me/50375666226?text=Hola%2C+deseo+m%C3%A1s+informaci%C3%B3n+sobre+el+Plan+Empresarial+de+VendlyPOS" target="_blank" class="btn-whatsapp-plan">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>Más Información al WhatsApp</span>
                     </a>
                 </div>
             </div>
@@ -1361,8 +1412,9 @@
                     </div>
                 </div>
                 <div style="flex-shrink: 0;">
-                    <a href="https://wa.me/50375666226?text=Hola,%20deseo%20activar%20la%20demostracion%20gratuita%20de%2015%20dias%20de%20VendlyPOS" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; padding: 14px 28px;">
-                        Activar Demo Gratis (15 Días)
+                    <a href="https://wa.me/50375666226?text=Hola,%20deseo%20activar%20la%20demostracion%20gratuita%20de%2015%20dias%20de%20VendlyPOS" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; padding: 14px 24px; display: inline-flex; align-items: center; gap: 8px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                        <span>Activar Demo Gratis (15 Días)</span>
                     </a>
                 </div>
             </div>
@@ -1410,8 +1462,9 @@
         <section class="cta-box">
             <h2>Transforma la Operación de tu Tienda Hoy Mismo</h2>
             <p>Únete a los comercios que ya operan con total rapidez, control estricto de inventarios y tranquilidad fiscal con VendlyPOS.</p>
-            <a href="https://wa.me/50375666226?text=Hola,%20quiero%20empezar%20con%20VendlyPOS%20en%20mi%20negocio" target="_blank" class="btn btn-primary" style="padding: 14px 36px; font-size: 16px;">
-                Hablar con un Especialista en WhatsApp
+            <a href="https://wa.me/50375666226?text=Hola,%20quiero%20empezar%20con%20VendlyPOS%20en%20mi%20negocio" target="_blank" class="btn btn-primary" style="padding: 14px 36px; font-size: 16px; display: inline-flex; align-items: center; gap: 10px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span>Hablar con un Especialista en WhatsApp</span>
             </a>
         </section>
 
@@ -1438,7 +1491,7 @@
                     </p>
                     <p style="font-size: 13px;">
                         <strong>Soporte Oficial:</strong> soporte-vendlypos@googlegroups.com<br>
-                        <strong>WhatsApp:</strong> +503 7566-6226
+                        <strong>WhatsApp:</strong> <a href="https://wa.me/50375666226" target="_blank" style="color: #25D366; display: inline-flex; align-items: center; gap: 5px; font-weight: 700; text-decoration: none;"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>+503 7566-6226</a>
                     </p>
                 </div>
 
