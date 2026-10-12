@@ -508,35 +508,82 @@
         }
 
         /* Plans Section */
+        .catalog-guarantee-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 9999px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            color: #34d399;
+            font-size: 13.5px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
         .plans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-bottom: 90px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 36px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 1140px) {
+            .plans-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .plans-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
 
         .pricing-card {
             background: var(--bg-card);
             border: 1px solid var(--border-card);
             border-radius: var(--radius-lg);
-            padding: 36px;
+            padding: 30px 22px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
         .pricing-card.popular {
             border-color: var(--primary);
-            background: linear-gradient(180deg, rgba(30, 27, 75, 0.6) 0%, rgba(15, 23, 42, 0.8) 100%);
-            box-shadow: 0 0 30px var(--primary-glow);
+            background: linear-gradient(180deg, rgba(30, 27, 75, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%);
+            box-shadow: 0 0 32px var(--primary-glow);
+            transform: scale(1.02);
+            z-index: 2;
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.03) translateY(-4px);
+        }
+
+        .pricing-card.enterprise {
+            border-color: rgba(139, 92, 246, 0.5);
+            background: linear-gradient(180deg, rgba(46, 16, 101, 0.35) 0%, rgba(15, 23, 42, 0.9) 100%);
         }
 
         .popular-tag {
             position: absolute;
             top: -12px;
-            right: 24px;
-            background: linear-gradient(90deg, var(--primary), var(--cyan));
+            right: 20px;
+            background: linear-gradient(90deg, var(--primary), #d946ef);
             color: #ffffff;
             font-size: 11px;
             font-weight: 800;
@@ -544,40 +591,121 @@
             padding: 4px 12px;
             border-radius: 9999px;
             letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .enterprise-tag {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
         }
 
         .plan-title {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 800;
             color: var(--text-heading);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .plan-desc {
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 16px;
+            min-height: 38px;
+            line-height: 1.4;
+        }
+
+        .plan-price-box {
+            margin-bottom: 18px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .plan-price-num {
+            font-size: 32px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .plan-price-cycle {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .plan-price-badge {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         .plan-features {
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+            flex-grow: 1;
         }
 
         .plan-features li {
-            font-size: 14px;
+            font-size: 13px;
             color: #cbd5e1;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.35;
+        }
+
+        .plan-features li strong {
+            color: #ffffff;
         }
 
         .plan-features li::before {
-            content: "•";
-            color: var(--primary-light);
-            font-size: 20px;
-            line-height: 1;
+            content: "✓";
+            color: #10b981;
+            font-weight: 900;
+            font-size: 13px;
+            line-height: 1.2;
+            flex-shrink: 0;
+        }
+
+        /* Demo Callout Box */
+        .demo-callout-card {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.35);
+            border-radius: var(--radius-lg);
+            padding: 32px 36px;
+            margin-bottom: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .demo-callout-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px;
+            }
+            .demo-callout-card .btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         /* FAQ Accordion */
@@ -1099,62 +1227,142 @@
         <!-- Plans & Pricing Section -->
         <section id="planes">
             <div class="section-header">
+                <div class="catalog-guarantee-pill">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Catálogo y productos 100% ilimitados en todos los planes</span>
+                </div>
                 <h2>Planes Flexibles para tu Negocio</h2>
-                <p>Licenciamiento claro, sin sorpresas ni comisiones ocultas sobre tus ventas.</p>
+                <p>Precios claros, sin sorpresas ni comisiones sobre tus ventas. Elige el plan que mejor impulse tu crecimiento.</p>
             </div>
 
             <div class="plans-grid">
+                <!-- 1. Plan Inicial -->
                 <div class="pricing-card">
                     <div>
-                        <h3 class="plan-title">Plan Básico</h3>
-                        <p class="plan-desc">Ideal para tiendas que inician con un solo mostrador.</p>
+                        <h3 class="plan-title">Plan Inicial</h3>
+                        <p class="plan-desc">Para microcomercios y puestos de mostrador: cobro ágil y stock sin facturación tributaria.</p>
+                        <div class="plan-price-box">
+                            <span class="plan-price-num">$8</span>
+                            <span class="plan-price-cycle">/ mes</span>
+                            <div><span class="plan-price-badge">1 Terminal (PC o Móvil)</span></div>
+                        </div>
                         <ul class="plan-features">
-                            <li>1 Terminal (Windows o Android)</li>
-                            <li>Ventas e Inventario ilimitados</li>
-                            <li>Libro de Créditos y Clientes</li>
-                            <li>Impresión de tickets térmicos</li>
+                            <li><strong>Ventas y catálogo ilimitados</strong></li>
+                            <li>Punto de Venta (POS) rápido</li>
+                            <li>Impresión de tickets térmicos (58/80mm)</li>
+                            <li>Cierre y arqueo diario de caja</li>
+                            <li>Operación 100% offline local en SQLite</li>
                             <li>Respaldos locales y en Google Drive</li>
                             <li>Soporte técnico por WhatsApp</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Me%20interesa%20el%20Plan%20Basico%20de%20VendlyPOS" target="_blank" class="btn btn-secondary">
+                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Inicial+de+VendlyPOS" target="_blank" class="btn btn-secondary">
+                        Contratar Plan Inicial
+                    </a>
+                </div>
+
+                <!-- 2. Plan Básico -->
+                <div class="pricing-card">
+                    <div>
+                        <h3 class="plan-title">Plan Básico</h3>
+                        <p class="plan-desc">Para comercios formales con emisión de facturación electrónica y control de cuentas.</p>
+                        <div class="plan-price-box">
+                            <span class="plan-price-num">$15</span>
+                            <span class="plan-price-cycle">/ mes</span>
+                            <div><span class="plan-price-badge">Facturación Electrónica MH</span></div>
+                        </div>
+                        <ul class="plan-features">
+                            <li><strong>Todo lo del Plan Inicial</strong></li>
+                            <li><strong>Facturación DTE El Salvador (FCF / CCF / NC)</strong></li>
+                            <li>Caja Registradora: turnos y arqueos X/Z</li>
+                            <li>Clientes y control de cuentas por cobrar</li>
+                            <li>Recibos digitales compartibles por WhatsApp</li>
+                            <li>Control de gastos fijos y proveedores</li>
+                            <li>1 Terminal autorizada</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Basico+de+VendlyPOS" target="_blank" class="btn btn-secondary">
                         Contratar Plan Básico
                     </a>
                 </div>
 
+                <!-- 3. Plan Pro (Más Elegido) -->
                 <div class="pricing-card popular">
                     <span class="popular-tag">Más Elegido</span>
                     <div>
-                        <h3 class="plan-title">Plan Multi-Caja (Red Local)</h3>
-                        <p class="plan-desc">Para comercios dinámicos con estación fija y terminales móviles.</p>
+                        <h3 class="plan-title">Plan Pro</h3>
+                        <p class="plan-desc">Para retail dinámico, boutiques, farmacias y comercios con balanza y combo móvil.</p>
+                        <div class="plan-price-box">
+                            <span class="plan-price-num">$25</span>
+                            <span class="plan-price-cycle">/ mes</span>
+                            <div><span class="plan-price-badge" style="color: #a5b4fc; background: rgba(99, 102, 241, 0.2);">Combo 2 Equipos Incluido</span></div>
+                        </div>
                         <ul class="plan-features">
-                            <li>Hasta 3 Terminales Simultáneas</li>
-                            <li>Servidor Windows + Cajas Android</li>
-                            <li>Sincronización instantánea por LAN</li>
-                            <li>Facturación Electrónica DTE MH (Opcional)</li>
-                            <li>Integración con Catálogo Web en Vivo</li>
-                            <li>Respaldos automáticos programados</li>
-                            <li>Soporte prioritario 7 días a la semana</li>
+                            <li><strong>Todo lo del Plan Básico</strong></li>
+                            <li><strong>Combo Dual: 1 PC Caja + 1 Móvil Satélite</strong></li>
+                            <li>Variantes de ropa (Talla / Color) y Ticket Regalo</li>
+                            <li>Balanza comercial de mostrador</li>
+                            <li>Farmacia: lotes, vencimientos y recetas SRS</li>
+                            <li>Asistente inteligente de reorden de stock</li>
+                            <li>Arqueo ciego antifraude en caja</li>
+                            <li>Escáner móvil Android por WiFi</li>
+                            <li>Exportación completa a Excel y métricas</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Me%20interesa%20el%20Plan%20Multi-Caja%20de%20VendlyPOS" target="_blank" class="btn btn-primary">
-                        Contratar Multi-Caja
+                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Pro+de+VendlyPOS" target="_blank" class="btn btn-primary">
+                        Contratar Plan Pro
                     </a>
                 </div>
 
-                <div class="pricing-card">
+                <!-- 4. Plan Empresarial -->
+                <div class="pricing-card enterprise">
+                    <span class="enterprise-tag">Ecosistema Completo</span>
                     <div>
-                        <h3 class="plan-title">Modo Demostración</h3>
-                        <p class="plan-desc">Prueba todas las funcionalidades sin ningún compromiso.</p>
+                        <h3 class="plan-title">Plan Empresarial</h3>
+                        <p class="plan-desc">Para restaurantes, talleres, cadenas y locales con múltiples cajas en red local.</p>
+                        <div class="plan-price-box">
+                            <span class="plan-price-num">$45</span>
+                            <span class="plan-price-cycle">/ mes · $400 / año</span>
+                            <div><span class="plan-price-badge" style="color: #c084fc; background: rgba(139, 92, 246, 0.2);">Hasta 5 Terminales en Red LAN</span></div>
+                        </div>
                         <ul class="plan-features">
-                            <li>Acceso Total por 15 Días</li>
-                            <li>Todas las funciones habilitadas</li>
-                            <li>Sin tarjeta de crédito requerida</li>
-                            <li>Asesoría de instalación incluida</li>
+                            <li><strong>Todo lo del Plan Pro</strong></li>
+                            <li><strong>Red Multi-Caja LAN en tiempo real</strong></li>
+                            <li><strong>Módulo Restaurante: Salones, Mesas y Monitor KDS</strong></li>
+                            <li>Recetas, combos y escandallo de cocina</li>
+                            <li><strong>Módulo Taller con órdenes y presupuestos</strong></li>
+                            <li><strong>Catálogo Web Público y pedidos en línea</strong></li>
+                            <li>Dashboard remoto del dueño en tiempo real</li>
+                            <li>Hasta 5 terminales activas en red</li>
+                            <li>Soporte técnico VIP prioritario</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/50375666226?text=Deseo%20activar%20la%20demostracion%20gratuita%20de%20VendlyPOS" target="_blank" class="btn btn-secondary">
-                        Activar Demo Gratis
+                    <a href="https://wa.me/50375666226?text=Hola%2C+quiero+activar+el+Plan+Empresarial+de+VendlyPOS" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);">
+                        Contratar Empresarial
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner Destacado: Modo Demostración 15 Días -->
+            <div class="demo-callout-card">
+                <div>
+                    <div style="display: inline-flex; align-items: center; gap: 8px; color: #fbbf24; font-size: 13px; font-weight: 800; text-transform: uppercase; margin-bottom: 8px;">
+                        <span>⭐ Evaluación Completa Sin Costo</span>
+                    </div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: #ffffff; margin-bottom: 8px;">Modo Demostración Oficial (15 Días)</h3>
+                    <p style="color: #94a3b8; font-size: 14.5px; max-width: 680px; margin-bottom: 12px; line-height: 1.5;">
+                        Descarga e instala VendlyPOS en tu PC Windows o celular Android. Activa tu período de prueba de 15 días con acceso total a todas las funciones (POS, Farmacia, Ropa, Restaurante y Multi-Caja) con catálogo de prueba precargado y sin tarjeta de crédito.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: #cbd5e1;">
+                        <span>✓ 15 Días de Acceso Premium</span>
+                        <span>✓ Paridad Windows & Android</span>
+                        <span>✓ Sin tarjeta de crédito</span>
+                        <span>✓ Asesoría de instalación gratis</span>
+                    </div>
+                </div>
+                <div style="flex-shrink: 0;">
+                    <a href="https://wa.me/50375666226?text=Hola,%20deseo%20activar%20la%20demostracion%20gratuita%20de%2015%20dias%20de%20VendlyPOS" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; padding: 14px 28px;">
+                        Activar Demo Gratis (15 Días)
                     </a>
                 </div>
             </div>
@@ -1164,8 +1372,18 @@
         <section id="faq" class="faq-section">
             <div class="section-header">
                 <h2>Preguntas Frecuentes</h2>
-                <p>Respuestas claras sobre la instalación, seguridad y funcionamiento del sistema.</p>
+                <p>Respuestas claras sobre la instalación, seguridad, planes y funcionamiento del sistema.</p>
             </div>
+
+            <details>
+                <summary>¿Cómo funciona la prueba gratuita de 15 días?</summary>
+                <p>Al descargar e instalar VendlyPOS en tu computadora Windows o teléfono Android, puedes activar el Modo Demo para disfrutar de 15 días continuos de evaluación con todas las funciones desbloqueadas (incluyendo restaurantes, farmacia, balanza y multi-caja). El sistema genera automáticamente datos de prueba para que explores el cobro de inmediato sin necesidad de ingresar tarjeta de crédito.</p>
+            </details>
+
+            <details>
+                <summary>¿Puedo comenzar con un plan y subir a otro más adelante?</summary>
+                <p>Sí, por supuesto. Puedes iniciar con el Plan Inicial o Básico y ascender a Plan Pro o Empresarial en cualquier momento. Tu base de datos local con todos tus productos, clientes, inventario e historial de ventas se conserva intacta sin reinicios ni pérdidas de información.</p>
+            </details>
 
             <details>
                 <summary>¿Puedo seguir cobrando si se cae el internet?</summary>
@@ -1174,7 +1392,7 @@
 
             <details>
                 <summary>¿Cómo funciona la sincronización entre computadoras y celulares?</summary>
-                <p>El sistema utiliza tu propia red WiFi o router del local (tecnología mDNS y sockets seguros LAN). La computadora de escritorio actúa como servidor local maestro y los teléfonos se conectan automáticamente sin depender de servidores lentos en la nube.</p>
+                <p>El sistema utiliza tu propia red WiFi o router del local (tecnología mDNS y comunicación directa por LAN). La computadora de escritorio actúa como servidor local maestro y los teléfonos se conectan automáticamente sin depender de servidores lentos en la nube ni pagar mensualidades de hosting externo.</p>
             </details>
 
             <details>
