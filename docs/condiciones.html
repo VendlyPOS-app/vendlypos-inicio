@@ -485,12 +485,16 @@
                 <li>NexoBits no se responsabiliza por retrasos, rechazos de documentos o sanciones fiscales originadas por indisponibilidad de los servidores del Ministerio de Hacienda (<code>api.dtes.mh.gob.sv</code>) o por inconsistencias en los datos ingresados por el contribuyente.</li>
             </ul>
 
-            <!-- 5. Conectividad y Funcionamiento Offline -->
-            <h2>5. Conectividad y Período de Gracia Offline</h2>
-            <p>VendlyPOS está diseñado para operar con alta disponibilidad en el mostrador sin requerir conexión continua e ininterrumpida a internet:</p>
+            <!-- 5. Conectividad, Arquitectura Offline-First y Servicios en la Nube -->
+            <h2>5. Conectividad, Arquitectura Offline-First y Servicios en la Nube</h2>
+            <p>VendlyPOS opera bajo una arquitectura <strong>Offline-First</strong> diseñada para garantizar la continuidad operativa en el mostrador sin requerir conexión continua e ininterrumpida a internet, complementada con servicios en la nube para funciones avanzadas:</p>
             <ul>
-                <li><strong>Operación sin Internet:</strong> El cobro en caja, la impresión de tickets físicos y el descuento de inventario funcionan de manera autónoma y local.</li>
-                <li><strong>Verificación de Licencia y Período de Gracia:</strong> La Aplicación requiere conectividad a internet para su activación inicial y validaciones periódicas con la base de licencias de Firebase. La Aplicación otorga un período de gracia de <strong>72 horas continuas offline</strong>. Transcurrido este plazo sin validación de red, el sistema requerirá conectarse a internet para reanudar operaciones.</li>
+                <li><strong>Capa Local Autónoma (Sin Internet):</strong> El cobro en caja (POS), el registro de transacciones, la gestión de inventarios, el libro de créditos y cuentas por cobrar, y la impresión física de tickets térmicos funcionan de manera 100% autónoma sobre la base de datos local SQLite.</li>
+                <li><strong>Verificación de Licencia y Período de Gracia:</strong> La Aplicación requiere conectividad a internet para su activación inicial y validaciones periódicas con la base de licencias de Firebase. La Aplicación otorga un período de gracia de <strong>72 horas continuas offline</strong>. Transcurrido este plazo sin validación de red, el sistema solicitará conexión a internet para continuar operando.</li>
+                <li><strong>Facturación Electrónica DTE (El Salvador):</strong> Requiere conexión a internet para la transmisión en tiempo real de Documentos Tributarios Electrónicos y recepción de sellos ante el Ministerio de Hacienda (MH). En caso de interrupción de red, la Aplicación permite emitir comprobantes en contingencia local para transmisión diferida posterior.</li>
+                <li><strong>Catálogo Web y Menú Digital Cloud:</strong> La publicación de existencias, imágenes de catálogo y recepción de pedidos web de clientes requiere conectividad hacia el relay seguro en la nube (PocketBase / CDN).</li>
+                <li><strong>Recibos Digitales y Enlaces Web:</strong> La consulta de comprobantes digitales y órdenes de taller por parte de clientes finales a través de códigos QR o enlaces web públicos (<code>recibos.vendlypos.shop</code> / <code>taller.vendlypos.shop</code>) requiere acceso a internet.</li>
+                <li><strong>Copias de Seguridad y Servicios Auxiliares:</strong> Los respaldos automáticos en Google Drive, el portal de rutas y reparto (<code>rutas.vendlypos.shop</code>) y el enlace remoto fuera de la red local requieren conexión a internet activa.</li>
             </ul>
 
             <!-- 6. Exclusión de Garantías -->

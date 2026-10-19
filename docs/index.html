@@ -1196,8 +1196,8 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Cobro Ultra Rápido Offline</h3>
-                    <p>Lectura ágil de códigos de barra, atajos de teclado y cobro en milisegundos. Si se corta el internet, tu mostrador sigue facturando con base de datos local SQLite sin interrupción.</p>
+                    <h3>Cobro Ultra Rápido Offline-First</h3>
+                    <p>Lectura ágil de códigos de barra, atajos de teclado y cobro en milisegundos. Si se corta el internet, tu mostrador sigue facturando con base de datos local SQLite con tolerancia de hasta 72 horas continuas.</p>
                 </div>
 
                 <div class="feature-card">
@@ -1295,7 +1295,7 @@
                             <li>Punto de Venta (POS) rápido</li>
                             <li>Impresión de tickets térmicos (58/80mm)</li>
                             <li>Cierre y arqueo diario de caja</li>
-                            <li>Operación 100% offline local en SQLite</li>
+                            <li>Operación local Offline-First en SQLite</li>
                             <li>Respaldos locales y en Google Drive</li>
                             <li>Soporte técnico por WhatsApp</li>
                         </ul>
@@ -1439,7 +1439,7 @@
 
             <details>
                 <summary>¿Puedo seguir cobrando si se cae el internet?</summary>
-                <p>Sí, absolutamente. VendlyPOS opera con almacenamiento local SQLite tanto en Windows como en Android. Las ventas, descuentos de inventario e impresión de tickets funcionan al 100% sin internet. Solo se requiere conexión para activar licencias periódicas y sincronizar DTE con Hacienda.</p>
+                <p>Sí, absolutamente. VendlyPOS opera con arquitectura <strong>Offline-First</strong> sobre base de datos SQLite local tanto en Windows como en Android. Las ventas, descuentos de inventario e impresión física de tickets funcionan de forma autónoma sin internet (con un período de gracia de hasta 72 horas continuas offline). La conexión es requerida únicamente para la validación periódica de la licencia y para servicios en la nube como la transmisión DTE a Hacienda, el catálogo web público y los recibos digitales.</p>
             </details>
 
             <details>

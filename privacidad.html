@@ -974,17 +974,17 @@
                 seguridad de sus datos. La pérdida de datos por daño, robo, restablecimiento de fábrica o fallo
                 del dispositivo no es responsabilidad del desarrollador.</p>
 
-            <h2>3. Sincronización y Uso de Internet</h2>
-            <p>La Aplicación utiliza internet exclusivamente para:</p>
+            <h2>3. Sincronización, Conectividad y Uso de Internet</h2>
+            <p>VendlyPOS opera bajo arquitectura <strong>Offline-First</strong> con almacenamiento local en SQLite. La Aplicación utiliza internet exclusivamente para los siguientes servicios:</p>
             <ul>
-                <li>Verificar el estado de validez de la licencia con el servidor Firebase (RTDB).</li>
-                <li>Sincronizar catálogos, ventas y configuración con el servidor local del negocio
-                    (red interna LAN/mDNS), cuando el usuario lo configure.</li>
-                <li>Recibir notificaciones locales (nuevos pedidos, stock bajo, vencimiento de licencias).</li>
+                <li>Verificar el estado de validez de la licencia con el servidor Firebase (RTDB), con un período de gracia de <strong>72 horas continuas offline</strong>.</li>
+                <li>Transmitir Documentos Tributarios Electrónicos (DTE) y recibir sellos de validación ante el Ministerio de Hacienda de El Salvador (cuando el usuario active dicho módulo).</li>
+                <li>Sincronizar el Catálogo Web y Menú Digital en la nube (PocketBase Relay / CDN) para la recepción de pedidos en línea.</li>
+                <li>Habilitar la consulta pública de recibos digitales y órdenes de taller mediante enlaces web (<code>recibos.vendlypos.shop</code> / <code>taller.vendlypos.shop</code>).</li>
+                <li>Generar copias de seguridad cifradas en la cuenta de Google Drive personal del usuario (alcance <code>drive.file</code>), de forma 100% voluntaria.</li>
+                <li>Enlace auxiliar en la nube para escáner móvil y terminales cuando no se encuentren en la misma red WiFi local (LAN/mDNS).</li>
             </ul>
-            <p>La Aplicación puede funcionar en modo offline. La conexión a internet es requerida para la
-                activación inicial y para la verificación periódica de licencia. Pasado el período de gracia
-                offline (72 horas), la Aplicación solicitará conexión para continuar operando.</p>
+            <p>El cobro en mostrador, control de inventario y cierre de turnos de caja operan de manera 100% autónoma en local sin necesidad de internet durante el período de gracia offline.</p>
 
             <h2>4. Uso Aceptable</h2>
             <p>El usuario se compromete a utilizar la Aplicación únicamente con fines comerciales legítimos y
